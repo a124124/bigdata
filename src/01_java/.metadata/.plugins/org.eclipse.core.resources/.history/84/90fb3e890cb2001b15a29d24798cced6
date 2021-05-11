@@ -1,0 +1,9 @@
+package com.lec.quiz;
+
+//(연습문제3) 두수를 입력받아 
+//두 수가 같은지 결과를 O나 X로 출력.
+//첫번째 수가 더 큰지 결과를 O나 X로 출력한다.
+
+public class Quiz3 {
+
+}

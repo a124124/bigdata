@@ -1,0 +1,7 @@
+package com.lec.ex;
+// 삼항연산자		조건(True or False) ? 조건이 참이 경우 취할 값/식 : 초건이 거짓일 경우 취할 값          ~ ? ~ : ~ 
+public class Ex05 {
+	public static void main(String[] args) {
+		
+	}
+}

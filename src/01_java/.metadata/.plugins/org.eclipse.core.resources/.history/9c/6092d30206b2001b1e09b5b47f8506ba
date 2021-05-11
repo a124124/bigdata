@@ -1,0 +1,13 @@
+package com.lec.ex;
+// 비트연산자 &(AND), |(OR), ^(XOR)
+public class Ex07 {
+	public static void main(String[] args) {
+		int n1 = 10; // 2진수로 들어감, 0 1 0 1 0
+		int n2 = 5;  // 0 1 0 1
+		int result;  //-----------
+		result = n1 & n2; //
+		System.out.println("n1 & n2 = " + result);
+		result = n1 | n2; // 
+		System.out.println("n1 | n2 = %xff");
+	}
+}

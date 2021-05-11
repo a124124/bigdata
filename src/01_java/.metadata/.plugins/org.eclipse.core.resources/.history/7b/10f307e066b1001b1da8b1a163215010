@@ -1,0 +1,8 @@
+package com.lec.ex;
+
+public class VarEx02 {
+	public static void main(String[] args) {
+		int i = 10 ; // 4byte 짜리 i 주머니에 10을 넣는다. 
+		byte j = 20; // 1byte 짜리 j 주머니에 20을 넣는다.
+	}
+}

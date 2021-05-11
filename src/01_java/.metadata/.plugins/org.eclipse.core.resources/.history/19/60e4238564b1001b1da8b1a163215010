@@ -1,0 +1,9 @@
+package com.lec.ex;
+
+public class VarEx01 {
+	public static void main(String[] args) {
+		int age = 23;
+		// 타입 변수명= (할당연산자) 초기값; (정수이기 때문에 int로 한다.)
+		
+	}
+}

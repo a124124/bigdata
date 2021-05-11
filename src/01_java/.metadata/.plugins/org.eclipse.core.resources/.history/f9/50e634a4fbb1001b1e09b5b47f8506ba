@@ -1,0 +1,12 @@
+package com.lec.ex;
+// 증강 연산자 : ++ -- 
+public class Ex02 {
+	public static void main(String[] args) {
+		int numFirst = 10;
+//		int num_first = 10;  python 스타일
+		numFirst++; // numFirst 값을 증가시킨다.
+		numFirst--; // numFirst 값을 감소시킨다.
+		
+		
+	}
+}

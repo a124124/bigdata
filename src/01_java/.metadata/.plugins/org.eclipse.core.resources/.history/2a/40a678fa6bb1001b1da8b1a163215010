@@ -1,0 +1,10 @@
+package com.lec.ex;
+//변수 선언 방법
+public class VarEx03 {
+	public static void main(String[] args) {
+		// 1. 자료형 변수명 ; 변수의 선언과 할당을 분리
+		int num1; //변수 선언
+		num1 = 10;  // 값 할당 
+		System.out.println(num1);
+	}
+}
