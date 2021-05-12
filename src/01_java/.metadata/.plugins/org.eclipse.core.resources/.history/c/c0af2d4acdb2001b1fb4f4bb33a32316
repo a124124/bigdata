@@ -1,0 +1,10 @@
+package com.lec.ex;
+
+public class Ex01 {
+	public static void main(String[] args) {
+		int i = 10; // 변수의 선언과 초기화.
+		int[] iArr = {10, 20, 30, 40, 50}; // 1. 배열 변수 선언과 초기화
+		iArr[0] = 90; //배열은 index 로 접근 (index : 0 ~ 4)  int[] iArr = {10, 20, 30, 40, 50}; 지금 설정한게 0~4까지밖에 없기 때문에.
+		
+	}
+}

@@ -1,0 +1,10 @@
+package com.lec.loop;
+// 1부터 20까지 누적 합을 출력
+public class Ex02_for {
+	public static void main(String[] args) {
+		int tot = 0;
+		for (i=0; i<=20; i++) {
+			System.out.println(tot+i);
+		}
+	}
+}
