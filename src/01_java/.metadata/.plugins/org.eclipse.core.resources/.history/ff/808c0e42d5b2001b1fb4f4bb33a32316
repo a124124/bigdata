@@ -1,0 +1,10 @@
+package com.lec.ex;
+
+public class Ex02 {
+	public static void main(String[] args) {
+		int i = 10;
+		int j = i;
+		j = 99;
+		System.out.printf("i = %d, j = %d,", i, j);
+	}
+}
