@@ -1,0 +1,11 @@
+package com.lec.ex;
+sum(1,10)
+public class Arithmatic {
+	public int sum(int from, int to) {
+		int result = 0; //숫자를 합쳐서 결과값을 내놓는다. sum 은 매개변수가 2개있어야한다. (*, *)
+		for(int i = from; i <= to; i++) {
+			result += i;
+		}
+		return result;
+	}
+}
