@@ -1,0 +1,8 @@
+package com.lec.car;
+
+public class Car {
+	String color; //속성 , 데이터 라고 부름.
+	String brand;
+	int cc; 
+	int speed;
+}

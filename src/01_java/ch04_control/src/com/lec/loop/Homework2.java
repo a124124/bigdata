@@ -8,8 +8,8 @@ public class Homework2 {
 					System.out.printf("i°ª(%d) + j°ª(%d) ÇÕ = %d\n", i, j, i+j);
 				
 					
-				}
-			}
-		}
-	}
-}
+				}//if 
+			}//for j
+		}//for i
+	}//main
+}//class
