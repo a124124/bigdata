@@ -1,0 +1,7 @@
+package com.lec.ex6_product;
+
+public class ProductTestMain {
+	public static void main(String[] args) {
+		
+	}
+}

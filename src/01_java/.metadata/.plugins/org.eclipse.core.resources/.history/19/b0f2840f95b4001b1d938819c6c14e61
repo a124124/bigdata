@@ -1,0 +1,43 @@
+package com.lec.ex8_student;
+
+public class StudentMain {
+	public static void main(String[] args) {
+		Student[] student = {new Student("정우성", 90, 90, 80),
+		          new Student("김하늘", 98, 87, 88),
+		          new Student("황정민", 86, 99, 93),
+		          new Student("강동원", 85, 92, 90),
+		          new Student("유아인", 86, 98, 87)
+		};
+		String[] title = {"번호","이름", "국어", "영어", "수학", "총점", "평균"};
+		int totKor = 0;
+		int totEng = 0;
+		int totMath = 0;
+		int totTotal = 0;
+		double totAverage = 0;
+		double avgKor = totKor / student.length;
+		double avgEng = 
+		double avgMath = 0;
+		double avgTotal = 0;
+		double avgAverage = 0;
+		System.out.println("--------------------------------------------------------------");
+		System.out.println("\t\t\t성적표");
+		System.out.println("--------------------------------------------------------------");
+		for(String t : title) {
+			System.out.printf("%s\t",t);
+		}
+		System.out.println();
+		for(Student s : student) {
+			s.infoToTal();
+			totKor += s.getKor();
+			totEng += s.getEng();
+			totMath += s.getMath();
+			totTotal += s.getTotal();
+			totAverage += s.getAverage();
+			
+			
+		}
+		System.out.println("--------------------------------------------------------------");
+		System.out.printf("총점 \t\t %d \t %d \t %d \t %d \t %.1f\n", totKor, totEng, totMath, totTotal, totAverage);
+		System.out.println("총점 \t\t %.1f \t %.1f \t %.1f \t %.1f \t %.1f\n", avgKor, avgEng);
+	}
+}

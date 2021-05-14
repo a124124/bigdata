@@ -8,11 +8,13 @@ package com.lec.ex2_parking;
 //		     * 출차시간 : 14시
 //		     * 주차요금 : 4000원
 
+import constant.Price;
+
 public class Parking {
 	private String carNum;
 	private int inTime;
 	private int outTime;
-	private final int HOURLYRATE = 2000; // 상수 , 종단 변수
+//	private final int HOURLYRATE = 2000; // 상수 , 종단 변수
 	
 	public Parking() {
 		// TODO Auto-generated constructor stub
@@ -27,7 +29,7 @@ public class Parking {
 	}
 	public void outTime(int outTime) {
 		System.out.printf(" %s 님 안녕히가세요.\n 입차시간 : %s 시 \n 출차시간 : %s 시 \n "
-						+ "이용시간 : %s 시간 \n 주차 요금 : %s 원 \n\n", carNum, inTime, outTime, outTime - inTime, (outTime - inTime) * HOURLYRATE);
+						+ "이용시간 : %s 시간 \n 주차 요금 : %s 원 \n\n", carNum, inTime, outTime, outTime - inTime, (outTime - inTime) * Price.HOURLYRATE);
 		System.out.println("**************************");
 	}
 	

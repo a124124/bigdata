@@ -4,7 +4,7 @@ package com.lec.ex5_momChild;
 // first.momPouch.money °¡ 2Ãµ¿ø
 public class Child {
 	private String name; 
-	MomPouch momPouch = new MomPouch();
+	static MomPouch momPouch = new MomPouch();
 	
 	public Child(String name) {
 		this.name = name;
