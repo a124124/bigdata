@@ -1,0 +1,9 @@
+package com.lec.ex5_momChild;
+// Child first = new Child("첫째");
+// first.takeMoney(1000); 
+// first.momPouch.money 가 2천원
+public class Child {
+	private String name; 
+	MomPouch momPouch = new MomPouch();
+	
+}

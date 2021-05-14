@@ -1,7 +1,0 @@
-package com.lec.ex;
-// 논리연산자 : &&(AND), ||(OR), !(NOT)
-public class Ex04 {
-	public static void main(String[] args) {
-		
-	}
-}

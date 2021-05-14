@@ -1,7 +1,0 @@
-package com.lec.ex;
-
-public class VarEx05 {
-	public static void main(String[] args) {
-		
-	}
-}

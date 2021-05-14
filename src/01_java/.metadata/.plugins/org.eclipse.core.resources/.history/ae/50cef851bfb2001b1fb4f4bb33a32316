@@ -1,9 +1,0 @@
-package com.lec.loop;
-
-public class Ex11_doWhile {
-	public static void main(String[] args) {
-		while(true) {
-			System.out.println("æ»≥Á«œººø‰");
-		}
-	}
-}

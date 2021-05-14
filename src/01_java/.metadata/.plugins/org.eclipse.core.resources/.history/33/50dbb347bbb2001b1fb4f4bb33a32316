@@ -1,7 +1,0 @@
-package com.lec.loop;
-
-public class Ex08_while {
-	public static void main(String[] args) {
-		
-	}
-}

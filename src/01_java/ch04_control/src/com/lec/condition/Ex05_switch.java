@@ -8,7 +8,7 @@ public class Ex05_switch {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("수는?");
 		int su = scanner.nextInt();
-		swtich (su % 2) { //정수 문자,문자열만 가능
+		switch (su % 2) { //정수 문자,문자열만 가능
 			case 0 : 
 				System.out.println("짝수");
 				break;
@@ -24,6 +24,6 @@ public class Ex05_switch {
 //		}else {
 //			System.out.println("홀");
 //		}
-//	}	scanne
+	}//	scanne
 	
 }

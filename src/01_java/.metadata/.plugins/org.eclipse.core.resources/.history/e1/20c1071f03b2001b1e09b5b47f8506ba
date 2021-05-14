@@ -1,5 +1,0 @@
-package com.lec.ex;
-// 할당연산자 (대입연산자) : =, +=, -=, *=, /=, %= 
-public class Ex06 {
-
-}

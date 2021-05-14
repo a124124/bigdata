@@ -1,5 +1,0 @@
-package com.lec.loop;
-// 1부터 20까지 누적 합을 출력
-public class Ex02_for {
-
-}
