@@ -1,0 +1,6 @@
+package com.lec.ex07_super_dot;
+
+public class ParentClass {
+	private String pStr = "부모 클래스";
+	
+}

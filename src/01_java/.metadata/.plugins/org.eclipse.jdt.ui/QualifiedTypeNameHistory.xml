@@ -4,4 +4,8 @@
 <fullyQualifiedTypeName name="constant.Price"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="com.lec.ex8_student.Student"/>
+<fullyQualifiedTypeName name="com.lec.ex01_parentChild.ParentClass"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="com.lec.ex05_override.ParentClass"/>
+<fullyQualifiedTypeName name="com.lec.ex05_override.ChildClass"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,18 @@
+package com.lec.ex06_this;
+// this() = 현 클래스의 생성자 함수
+// tihs. = 내 객체의
+public class Friend {
+	private name;
+	private tel;
+	public Friend( ) {
+		System.out.println("매개변수 없는 생성자");
+	}
+	public Friend(String name, String tel) {
+		this(); //Friend() 호출
+		this.name = name;
+		this.tel = tel;
+		System.out.println("매개변수 있는 생서자 함수 초기화");
+		
+	}
+	
+}

@@ -1,0 +1,9 @@
+package com.lec.ex05_override;
+
+public class TestMain {
+	public static void main(String[] args) {
+		ParentClass pObj1 = new ParentClass();
+		ParentClass pObj2 = new ParentClass(1);
+		
+	}
+}

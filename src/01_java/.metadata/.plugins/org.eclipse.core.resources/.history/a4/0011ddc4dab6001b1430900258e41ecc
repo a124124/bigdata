@@ -1,0 +1,10 @@
+package com.lec.ex09_store;
+
+public class StoreNum1 extends HeadQuarterStore {
+
+	public StoreNum1(String name) {
+		super(name);
+		this.name = name;
+	}
+	
+}

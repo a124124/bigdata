@@ -1,0 +1,6 @@
+package com.lec.ex02_super;
+
+public class Child extends SuperIJ{
+	
+
+}

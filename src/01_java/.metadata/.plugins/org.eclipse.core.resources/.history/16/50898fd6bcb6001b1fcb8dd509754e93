@@ -1,0 +1,21 @@
+package com.lec.ex04_abc;
+
+public class TestMain {
+	public static void main(String[] args) {
+		S s = new S();
+		A a = new A();
+		S aa = new A();
+		B b = new B();
+		S bb = new B();
+		C c = new C();
+		S cc = new C();
+		System.out.println(s);
+		System.out.println(a);
+		System.out.println(aa);
+		System.out.println(b);
+		System.out.println(bb);
+		System.out.println(c);
+		System.out.println(cc);
+				
+	}
+}

@@ -1,0 +1,13 @@
+package com.lec.ex04_abc;
+
+public class TestMain {
+	public static void main(String[] args) {
+		S s = new S();
+		A a = new A();
+		S aa = new A();
+		B b = new B();
+		S bb = new B();
+		
+		
+	}
+}

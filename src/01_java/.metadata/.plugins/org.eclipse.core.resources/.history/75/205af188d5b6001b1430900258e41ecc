@@ -1,0 +1,11 @@
+package com.lec.ex08_person;
+
+public class TestMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Person papa = new Person("ȫ�浿");
+		
+	}
+
+}

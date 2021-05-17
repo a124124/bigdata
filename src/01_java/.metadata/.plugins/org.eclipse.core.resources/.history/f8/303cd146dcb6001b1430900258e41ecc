@@ -1,0 +1,9 @@
+package com.lec.ex09_store;
+
+public class TestMain {
+	public static void main(String[] args) {
+		HeadQuarterStore st = new HeadQuarterStore("º»»ç");
+		st.sunde();
+		st.bab();
+	}
+}

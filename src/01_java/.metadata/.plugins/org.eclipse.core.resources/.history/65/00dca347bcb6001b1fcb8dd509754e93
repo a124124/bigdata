@@ -1,0 +1,8 @@
+package com.lec.ex04_abc;
+
+public class TestMain {
+	public static void main(String[] args) {
+		S s = new S();
+		
+	}
+}

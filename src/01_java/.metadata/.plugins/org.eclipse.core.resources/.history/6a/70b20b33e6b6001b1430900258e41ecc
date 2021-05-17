@@ -1,0 +1,9 @@
+package com.lec.ex10_Test;
+
+public class Student extends Person{
+
+	public Student(String id, String name) {
+		super(id, name);
+		
+	}
+}

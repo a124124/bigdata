@@ -1,0 +1,10 @@
+package comd.lec.ex03_point;
+
+public class Point {
+	private int x;
+	private int y;
+	public void pointPrint() {
+		System.out.printf("2차원 좌표값 : %d , %d",x , y);
+			
+	}
+}

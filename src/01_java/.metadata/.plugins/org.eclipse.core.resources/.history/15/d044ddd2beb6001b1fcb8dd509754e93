@@ -1,0 +1,5 @@
+package com.lec.ex05_override;
+// 오버라이딩 
+public class ParentClass {
+
+}

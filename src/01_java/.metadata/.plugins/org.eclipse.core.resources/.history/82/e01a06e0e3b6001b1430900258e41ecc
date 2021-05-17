@@ -1,0 +1,18 @@
+package com.lec.ex10_Test;
+
+public class Person {
+	private String id;
+	private String name;
+	
+	public Person(String id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+	public void print() {
+		System.out.println("(ID)" + id + "\t (¿Ã∏ß)" + name + "\t" );
+	}
+	
+	
+	
+	
+}
