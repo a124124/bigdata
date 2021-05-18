@@ -1,0 +1,9 @@
+package com.lec.ex11_account;
+
+public class Account {
+	private String accountNo;
+	private String ownerName;
+	private int balance;
+	
+	
+}

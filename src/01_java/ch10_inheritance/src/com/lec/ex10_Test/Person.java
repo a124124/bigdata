@@ -19,7 +19,7 @@ public class Person {
 		this.name = name;
 	}
 	public void print() {
-		System.out.println("(ID) " + id + "\t(이름)" + name);
+		System.out.println("(ID) " + id + "\t(이름) " + name);
 	}
 
 	public String getId() {

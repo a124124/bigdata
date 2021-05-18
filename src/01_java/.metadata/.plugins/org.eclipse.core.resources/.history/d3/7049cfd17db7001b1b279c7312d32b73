@@ -1,0 +1,16 @@
+package com.lec.ex11_account;
+
+public class CheckingAccount extends Account{
+	private String cardNo;
+	
+	public CheckingAccount() {
+		
+	}
+
+	public CheckingAccount(String accountNo, String ownerName, String cardNo) {
+		super(accountNo, ownerName);
+		this.cardNo = cardNo;
+	}
+	
+	
+}

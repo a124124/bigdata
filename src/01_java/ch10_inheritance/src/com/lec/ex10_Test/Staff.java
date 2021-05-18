@@ -9,7 +9,7 @@ public class Staff extends Person{
 	}
 	@Override
 	public void print() {
-		System.out.println("(ID) " + getId() + "\t(이름)" + getName() + "\t (부서) " + department);
+		System.out.println("(ID) " + getId() + "\t(이름) " + getName() + "\t (부서) " + department);
 	}
 	public String getDepartment() {
 		return department;

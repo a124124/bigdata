@@ -1,0 +1,23 @@
+package com.lec.ex04_shape;
+
+public class Triangle extends Shape {
+	private int w;
+	private int h;
+	
+	public Triangle(int w, int h) {
+		this.w = w;
+		this.h = h;
+	}
+	@Override
+	public void computeArea() {
+		// TODO Auto-generated method stub
+		System.out.println("»ï°¢ÇüÀÇ ³ÐÀÌ´Â " + (w * h / 2) );
+
+	}
+	@Override
+	public void draw() {
+		// TODO Auto-generated method stub
+		System.out.println("»ï°¢ÇüÀ» ±×·Á¿ä");
+	}
+
+}

@@ -2,10 +2,17 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="com.lec.ex3_accessTest.AccessTest"/>
 <fullyQualifiedTypeName name="constant.Price"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="com.lec.ex8_student.Student"/>
 <fullyQualifiedTypeName name="com.lec.ex01_parentChild.ParentClass"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="com.lec.ex05_override.ParentClass"/>
 <fullyQualifiedTypeName name="com.lec.ex05_override.ChildClass"/>
+<fullyQualifiedTypeName name="com.lec.ex07_super_dot.ParentClass"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="com.lec.ex08_person.Baby"/>
+<fullyQualifiedTypeName name="com.lec.ex09_store.StoreNum1"/>
+<fullyQualifiedTypeName name="com.lec.ex09_store.StoreNum2"/>
+<fullyQualifiedTypeName name="com.lec.ex09_store.StoreNum3"/>
+<fullyQualifiedTypeName name="com.lec.ex09_store.HeadQuarterStore"/>
+<fullyQualifiedTypeName name="com.lec.ex10_Test.Person"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,24 @@
+package com.lec.ex09_store;
+// ´ëÇÐ°¡¿¡ ¸ÅÀå2È£Á¡:  ºÎ´ëÂî°³-5,000  ºñºö¹ä-5,000  °ø±â¹ä-¹«·á
+public class StoreNum2 extends HeadQuarterStore{
+
+	public StoreNum2(String name) {
+		super(name);
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public void bude() {
+		// TODO Auto-generated method stub
+		System.out.println("ºÎ´ëÂî°³ : 5,000¿ø");
+	}
+	@Override
+	public void bibim() {
+		// TODO Auto-generated method stub
+		System.out.println("ºñºö¹ä : 5,000¿ø");
+	}
+	@Override
+	public void bab() {
+		// TODO Auto-generated method stub
+		System.out.println("°ø±â¹ä : ¹«·á");
+	}
+}

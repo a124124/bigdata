@@ -1,0 +1,8 @@
+package com.lec.ex06_car;
+
+public class Car {
+	private String car;
+	private String tire;
+	private int displacement; //¹è±â·®
+	
+}

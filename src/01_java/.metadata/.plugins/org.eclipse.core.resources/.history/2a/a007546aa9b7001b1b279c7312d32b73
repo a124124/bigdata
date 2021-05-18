@@ -1,0 +1,13 @@
+package com.lec.ex05_lunch;
+
+public class TestMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Child1 c1 = new Child1("1Çü", 500, 500, 500, 500, 500, 500);
+		
+		c1.calculate();
+		
+	}
+
+}

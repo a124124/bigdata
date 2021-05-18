@@ -8,7 +8,7 @@ public class Gangsa extends Person{
 	}
 	@Override
 	public void print() {
-		System.out.println("(ID) " + getId() + "\t(이름)" + getName() + "\t (과목) " + subject);
+		System.out.println("(ID) " + getId() + "\t(이름) " + getName() + "\t (과목) " + subject);
 	}
 	public void setSubject(String subject) {
 		this.subject = subject;

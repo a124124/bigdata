@@ -9,7 +9,7 @@ public class Student extends Person{
 	}
 	@Override
 	public void print() {
-		System.out.println("(ID) " + getId() + "\t(이름)" + getName() + "\t (반) " + ban);
+		System.out.println("(ID) " + getId() + "\t(이름) " + getName() + "\t (반) " + ban);
 	}
 	
 	public String getBan() {

@@ -1,0 +1,10 @@
+package com.lec.ex06_car;
+
+public class HIghGradeCar extends Car{
+
+	public HIghGradeCar(String color, String tire, int displacement) {
+		super(color, tire, displacement);
+		// TODO Auto-generated constructor stub
+	}
+
+}

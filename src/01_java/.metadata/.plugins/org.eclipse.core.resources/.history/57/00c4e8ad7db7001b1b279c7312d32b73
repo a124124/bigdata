@@ -1,0 +1,10 @@
+package com.lec.ex11_account;
+
+public class CheckingAccount extends Account{
+	private String cardNo;
+	
+	public CheckingAccount() {
+		
+	}
+	
+}

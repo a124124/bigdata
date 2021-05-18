@@ -14,6 +14,7 @@ public class Main {
 		
 		for(Person i : person) {
 			i.print();
+//			System.out.println(i);
 		}
 
 	}

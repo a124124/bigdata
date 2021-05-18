@@ -1,0 +1,5 @@
+package com.lec.ex12_final;
+
+public final class Dog extends Animal{
+
+}

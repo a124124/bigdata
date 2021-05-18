@@ -1,0 +1,11 @@
+package com.lec.ex05_lunch;
+
+public abstract class LunchMenu {
+	private String typeString; // 어린이 타입.
+	private int rice;  //밥값
+	private int bulgogi; // 
+	private int soup;
+	private int banana;
+	private int almond;
+	private int milk;
+}
