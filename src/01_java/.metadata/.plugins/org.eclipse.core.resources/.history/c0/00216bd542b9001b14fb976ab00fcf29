@@ -1,0 +1,17 @@
+package com.lec.ex10_lib;
+
+public class Book implements ILendable{
+
+	@Override
+	public void checkOut(String borrower, String checkOutDate) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void checkIn() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

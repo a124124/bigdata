@@ -1,0 +1,5 @@
+package com.lec.ex08_volume;
+// Speaker, TV, Radio 
+public class IVolume {
+
+}

@@ -1,0 +1,24 @@
+package com.lec.ex04_actor;
+
+public class ActorMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Actor park = new Actor("박보검");
+		
+		park.canCatchCriminal();
+		park.canSearch();
+		park.outFire();
+		park.saveMan();
+		park.makePizza();
+		park.makeSpaghetti();
+		
+		System.out.println("=======================");
+		
+		IFireFighter park1 = new Actor("박보검");
+		park1.outFire();
+		park1.saveMan();
+	}
+	
+
+}

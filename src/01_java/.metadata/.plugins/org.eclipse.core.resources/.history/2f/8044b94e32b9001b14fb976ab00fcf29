@@ -1,0 +1,5 @@
+package com.lec.ex08_volume;
+// Speaker, TV, Radio 
+public interface IVolume {
+	public int SPEAKER_MAX_VOLUME = 50;
+}

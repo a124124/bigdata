@@ -1,0 +1,23 @@
+package com.lec.ex02;
+
+public class Amodel implements IAcorp {
+
+	@Override
+	public void dmbReceive() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void lte() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void tvRemoteControl() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.lec.ex10_lib;
+
+public class TestMain {
+	public static void main(String[] args) {
+		Book book1 = new Book("001", "ÀÚ¹Ù", "È«±æµ¿");
+		book1.checkIn();
+		book1.checkOut("±è±æµ¿", "210521");
+	}
+}

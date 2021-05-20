@@ -8,7 +8,7 @@ public abstract class Employee {
 		this.name = name;
 		
 	}
-	public abstract void computePay();
+	public abstract int computePay();
 	
 	public final int computeIncentive() {
 		int pay = computePay();

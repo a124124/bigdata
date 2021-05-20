@@ -1,0 +1,41 @@
+package com.lec.ex03_store;
+//Áõ±Ç°¡¿¡ ¸ÅÀå3È£Á¡: ±èÄ¡Âî°³-6,000  ºÎ´ëÂî°³-7,000  ºñºö¹ä-7,000 ¼ø´ë±¹-6,000   kimchi bude bibim sunde bab
+public class StoreNum3 implements HeadQuarterStore {
+	private String name;
+	public StoreNum3(String name) {
+		// TODO Auto-generated constructor stub
+		this.name = name;
+	}
+
+	@Override
+	public void kimchi() {
+		// TODO Auto-generated method stub
+		System.out.println("±èÄ¡Âî°³ : 6,500¿ø");
+	}
+	@Override
+	public void bude() {
+		// TODO Auto-generated method stub
+		System.out.println("ºÎ´ëÂî°³ : 7,000¿ø");
+	}
+	@Override
+	public void bibim() {
+		// TODO Auto-generated method stub
+		System.out.println("ºñºö¹ä : 7,000¿ø");
+	}
+	@Override
+	public void sunde() {
+		// TODO Auto-generated method stub
+		System.out.println("¼ø´ë±¹ : 6,500¿ø");
+	}
+
+	@Override
+	public void bab() {
+		// TODO Auto-generated method stub
+		System.out.println("°ø±â¹ä : 1,000¿ø");
+	}
+	public String getName() {
+		return name;
+	}
+	
+	
+}

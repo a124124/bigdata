@@ -1,0 +1,35 @@
+package com.lec.ex03_store;
+// 대학가에 매장2호점:  부대찌개-5,000  비빔밥-5,000  공기밥-무료 kimchi bude bibim sunde bab
+public class StoreNum2 implements HeadQuarterStore{
+	private String name = "대학가 2호점";
+	
+	@Override
+	public void bude() {
+		// TODO Auto-generated method stub
+		System.out.println("부대찌개 : 4,000원");
+	}
+	@Override
+	public void bibim() {
+		// TODO Auto-generated method stub
+		System.out.println("비빔밥 : 4,000원");
+	}
+	@Override
+	public void bab() {
+		// TODO Auto-generated method stub
+		System.out.println("공기밥 : 무료");
+	}
+	@Override
+	public void kimchi() {
+		// TODO Auto-generated method stub
+		System.out.println("김치찌개 : 4,000원");
+	}
+	@Override
+	public void sunde() {
+		// TODO Auto-generated method stub
+		System.out.println("순대국 : 4,000원");
+	}
+	public String getName() {
+		return name;
+	}
+	
+}

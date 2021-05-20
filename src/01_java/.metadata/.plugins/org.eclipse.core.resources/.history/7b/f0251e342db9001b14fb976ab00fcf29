@@ -1,0 +1,19 @@
+package com.lec.ex06_toy;
+
+public class Mazinger implements IMissile, IMoveArmLeg{
+	public Mazinger() {
+		System.out.println("마징가 장난감");
+	}
+	@Override
+	public void canMoveArmLeg() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void canMissile() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

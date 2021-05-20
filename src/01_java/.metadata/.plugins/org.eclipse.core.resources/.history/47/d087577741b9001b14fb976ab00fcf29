@@ -1,0 +1,6 @@
+package com.lec.ex10_lib;
+
+public interface ILendable {
+	public void checkIn(); // π›≥≥
+	public void checkOut(); //¥Î√‚
+}

@@ -1,0 +1,8 @@
+package com.lec.ex10_lib;
+
+public class TestMain {
+	public static void main(String[] args) {
+		Book book1 = new Book("001", "자바", "홍길동");
+	System.out.println(book1);	
+	}
+}

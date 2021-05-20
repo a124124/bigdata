@@ -1,0 +1,16 @@
+package com.lec.ex06_toy;
+
+public class TestMain {
+	public static void main(String[] args) {
+		IToy[] toy = {new Pooh(),
+					  new Mazinger(),
+					  new Airplane() 
+		};
+		
+		for(IToy i : toy) {
+			
+		System.out.println(i.getClass().getName());
+		System.out.println(i);
+		}
+	}
+}

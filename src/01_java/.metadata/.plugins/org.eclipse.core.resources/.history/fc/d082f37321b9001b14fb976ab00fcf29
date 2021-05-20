@@ -1,0 +1,15 @@
+package com.lec.ex06_toy;
+
+public class Pooh implements IMoveArmLeg{
+	pubic Pooh() {
+		System.out.println("°õµ¹ÀÌ ÇªÀÔ´Ï´Ù.");
+		canMoveArmLeg();
+		System.out.println("-------------------");
+	}
+	@Override
+	public void canMoveArmLeg() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

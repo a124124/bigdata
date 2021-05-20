@@ -1,0 +1,65 @@
+package com.lec.ex08_volume;
+
+public class Radio implements IVolume {
+	private int volumeLevel;
+	public Radio() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Radio(int volumeLevel) {
+		super();
+		this.volumeLevel = volumeLevel;
+	}
+
+	@Override
+	public void volumeUp() { //volumeLevel 을 1증가시키지만 100일땐 증가시키지 않는다.
+		// TODO Auto-generated method stub
+		volumeLevel++;
+		if(volumeLevel >= RADIO_MAX_VOLUME) {
+			volumeLevel = RADIO_MAX_VOLUME;
+			System.out.println("볼륨이 최대치입니다.");
+		}else {
+			System.out.println("볼륨을 1 높혔습니다. 현재 볼륨 : " + volumeLevel);
+		}
+		
+	}
+
+	@Override
+	public void volumeUp(int level) { //
+		// TODO Auto-generated method stub
+		volumeLevel += level;
+		if(volumeLevel >= RADIO_MAX_VOLUME) {
+			volumeLevel = RADIO_MAX_VOLUME;
+			System.out.println("볼륨이 최대치입니다.");
+		}else {
+			System.out.printf("볼륨을 %d 높혔습니다. 현재 볼륨 : %d\n", level, volumeLevel);
+		}
+
+	}
+
+	@Override
+	public void volumeDown() {
+		// TODO Auto-generated method stub
+		volumeLevel--;
+		if(volumeLevel <= MIN_VOLUME) {
+			volumeLevel = MIN_VOLUME;
+			System.out.println("무음입니다.");
+		}else {
+			System.out.println("볼륨을 1 낮췄습니다. 현재 볼륨 : " + volumeLevel);
+		}
+
+	}
+
+	@Override
+	public void volumeDown(int level) {
+		// TODO Auto-generated method stub
+		volumeLevel -= level;
+		if(volumeLevel <= MIN_VOLUME) {
+			volumeLevel = MIN_VOLUME;
+			System.out.println("무음입니다.");
+		}else {
+			System.out.printf("볼륨을 %d 낮췄습니다. 현재 볼륨 : %d\n", level, volumeLevel);
+		}
+	}
+
+}
