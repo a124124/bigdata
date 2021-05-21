@@ -1,0 +1,7 @@
+package com.lec.ex11_lib;
+
+public class CDInfo {
+	private String cdNo;
+	private String cdTitle;
+	private String bookNo;
+}

@@ -1,0 +1,12 @@
+package com.lec.ex01_string;
+
+import java.util.Scanner;
+
+// 주민번호를 입력받아 남자인지 여자인지 확인.
+public class Ex03 {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		String i = scanner.next();
+		System.out.println("주민번호를 입력하세요");
+	}
+}

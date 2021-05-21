@@ -1,0 +1,8 @@
+package singleton.step1;
+
+public class TestMain {
+	public static void main(String[] args) {
+		SingletonClass obj = new SingletonClass();
+		SingletonClass obj2 = new SingletonClass();
+	}
+}

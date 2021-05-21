@@ -1,0 +1,10 @@
+package com.lec.ex11_lib;
+
+public class CDLib extends CDInfo implements ILendable{
+
+	public CDLib(String cdNo, String cdTitle, String bookNo) {
+		super(cdNo, cdTitle, bookNo);
+		// TODO Auto-generated constructor stub
+	}
+
+}

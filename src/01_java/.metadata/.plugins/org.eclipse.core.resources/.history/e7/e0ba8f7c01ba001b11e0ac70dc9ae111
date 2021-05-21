@@ -1,0 +1,6 @@
+package singleton.step2;
+
+public class SecondClass {
+	public SecondClass() {
+		SingletonClass singletonObject = 	}
+}

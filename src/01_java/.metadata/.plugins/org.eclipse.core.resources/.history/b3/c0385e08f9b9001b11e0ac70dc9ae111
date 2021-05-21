@@ -1,0 +1,16 @@
+package singleton.step1;
+
+public class SingletonClass {
+	private int i;
+	
+	
+	public void getI{
+		return i;
+	}
+	public void setI(int i) {
+		this.i = i;
+	}
+	
+	
+}
+

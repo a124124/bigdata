@@ -1,0 +1,16 @@
+package com.lec.ex10_lib;
+
+import java.util.Scanner;
+
+public class LibMain {
+	public static void main(String[] args) {
+		Book[] books = {new Book("001", "자바", "자길동"),
+						new Book("002", "오라클", "오길동"),
+						new Book("003", "파이썬", "파길동"),
+						new Book("004", "웹", "웹길동"),
+						new Book("005", "하둡", "하길동")
+		};
+		Scanner scanner = new Scanner(system.in);
+		int fn, idx = 0; // 1.대출, 2.반납, 3.도서현황, 0.종료
+	}
+}

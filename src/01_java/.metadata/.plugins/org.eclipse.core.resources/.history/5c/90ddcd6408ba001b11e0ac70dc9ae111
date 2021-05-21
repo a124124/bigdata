@@ -1,0 +1,9 @@
+package com.lec.ex01_string;
+
+public class Ex01 {
+	int i = 10;
+	String str = "java";
+	String str2 = "java";
+	String str4 = "Java";
+	
+}
