@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.lec.ex3_accessTest.AccessTest"/>
 <fullyQualifiedTypeName name="constant.Price"/>
 <fullyQualifiedTypeName name="com.lec.ex8_student.Student"/>
 <fullyQualifiedTypeName name="com.lec.ex01_parentChild.ParentClass"/>
@@ -53,5 +52,12 @@
 <fullyQualifiedTypeName name="com.lec.ex09_robot.SingRobot"/>
 <fullyQualifiedTypeName name="com.lec.ex09_robot.DanceRobot"/>
 <fullyQualifiedTypeName name="com.lec.ex10_lib.ILendable"/>
+<fullyQualifiedTypeName name="com.lec.ex11_lib.BookInfo"/>
+<fullyQualifiedTypeName name="com.lec.ex11_lib.ILendable"/>
+<fullyQualifiedTypeName name="singleton.step1.SingletonClass"/>
+<fullyQualifiedTypeName name="singleton.step2.FirstClass"/>
+<fullyQualifiedTypeName name="singleton.step2.SecondClass"/>
+<fullyQualifiedTypeName name="singleton.step2.SingletonClass"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

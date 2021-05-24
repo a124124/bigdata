@@ -1,5 +1,0 @@
-package com.lec.ex6_product;
-
-public class Product {
-	private int serialNo; //객체 고유 번호.
-}

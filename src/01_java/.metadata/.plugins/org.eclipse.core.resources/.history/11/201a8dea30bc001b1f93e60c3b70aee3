@@ -1,0 +1,8 @@
+package com.lec.ex01_string;
+
+public class Friend {
+	private String name;
+	private String phone;
+	private String birthDay;
+	
+}

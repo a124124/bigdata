@@ -1,0 +1,8 @@
+package com.lec.ex01_string;
+
+public class Ex07_string {
+	public static void main(String[] args) {
+		String str = "Hello~";
+		System.out.println(str.toString());
+	}
+}

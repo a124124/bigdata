@@ -1,0 +1,21 @@
+package com.lec.ex01_string;
+
+import java.util.Scanner;
+
+public class Ex05 {
+	public static void main(String[] args) {
+		String[] nums = {"010-9999-9999",
+						"010-8888-8888",
+						"010-8777-7777",
+						"010-5525-7777",
+						"010-5212-6666"
+		};
+		Scanner sc = new Scanner(System.in);
+		System.out.println("전화번호 뒤 4자리 검색");
+		//
+//		String num = sc.next();
+		
+		
+		
+	}
+}

@@ -8,9 +8,12 @@ public class Ex04 {
 			if(i % 2 == 0) {
 				System.out.print(" ");
 			}else {
-				System.out.print("1");
+				System.out.print(str.charAt(i));
 			}
+	
 		}
-		
+		System.out.println();
+		System.out.println(str);
+		System.out.println(str.equalsIgnoreCase("y"));
 	}
 }

@@ -1,0 +1,11 @@
+package com.lec.ex01_string;
+
+public class Ex08_stringbuilder {
+	public static void main(String[] args) {
+		String st = "abc";
+		StringBuilder stb = new StringBuilder("abc");
+		System.out.println(st.hashCode());
+		System.out.println(stb.hashCode());
+	}
+	
+}

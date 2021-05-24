@@ -1,0 +1,22 @@
+package com.lec.ex02_date;
+
+import java.util.Calendar;
+
+public class Ex01_calender {
+	public static void main(String[] args) {
+		Calendar cal = Calendar.getInstance();
+		System.out.println(cal);
+		System.out.println(cal.getTime());
+		int year = cal.get(Calendar.YEAR);
+		int month = cal.get(Calendar.DAY_OF_MONTH) + 1;
+		int day = cal.get(Calendar.DATE);
+		int WEEK = cal.get(Calendar.DAY_OF_WEEK);
+		int hour24 = cal.get(Calendar.HOUR_OF_DAY);
+		int hour = cal.get(Calendar.HOUR);
+		int ampm;
+		int minute;
+		int second;
+	
+	}
+	
+}

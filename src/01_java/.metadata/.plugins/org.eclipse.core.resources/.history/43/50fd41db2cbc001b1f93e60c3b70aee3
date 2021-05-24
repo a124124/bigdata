@@ -1,0 +1,32 @@
+package com.lec.ex01_string;
+
+import java.util.Scanner;
+
+public class Ex05 {
+	public static void main(String[] args) {
+		String[] nums = {"010-9999-9999",
+						"010-8888-8888",
+						"010-8777-7777",
+						"010-5525-7777",
+						"010-5212-6666"
+		};
+		Scanner sc = new Scanner(System.in);
+		System.out.println("전화번호 뒤 4자리 검색");
+		//
+		String num = sc.next();
+		
+		for(int i = 0; i < nums.length ; i++) {
+			String temp = nums[i].substring(nums[i].lastIndexOf("-") + 1);
+			if(temp.equals(num)) {
+				System.out.println(nums[i]);
+				
+				
+			}
+		}
+		if(i == nums.length) {
+			System.out.println("입력하신 번호는 없는 번호입니다.");
+		}
+		
+		
+	}
+}

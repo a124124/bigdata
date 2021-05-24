@@ -1,0 +1,12 @@
+package com.lec.ex02_date;
+
+import java.util.Calendar;
+import java.util.Date;
+
+public class Ex04_simpleDateFormat {
+	public static void main(String[] args) {
+		Date now1 = new Date();
+		Calendar now2 = Calendar.getInstance();
+		
+	}
+}
