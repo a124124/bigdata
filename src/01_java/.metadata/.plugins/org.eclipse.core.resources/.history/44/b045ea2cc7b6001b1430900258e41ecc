@@ -1,9 +1,0 @@
-package com.lec.ex07_super_dot;
-
-public class ChildClass extends ParentClass{
-	private String cStr = "자식 클래스";
-	public ChildClas() {
-		System.out.println("자식 생성자");
-		
-	}
-}

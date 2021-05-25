@@ -1,0 +1,10 @@
+package com.lec.ex03_math;
+ // 반올림, 올림, 버림
+public class Ex02 {
+	public static void main(String[] args) {
+		System.out.println("소수점에서 반올림, 올림, 버림");
+		
+		System.out.println("9.12 의 올림 : " + (int)Math.ceil(9.12));
+		
+	}
+}

@@ -1,0 +1,8 @@
+package com.lec.ex04_object;
+
+public class Person {
+	private long juminNo; // 2105251010101
+	public Person(long juminNo) {
+		this.juminNo = juminNo;
+	}
+}

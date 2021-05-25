@@ -1,5 +1,0 @@
-package com.lec.ex05_override;
-// 오버라이딩 (함수를 재정의 한다)
-public class ParentClass {
-
-}

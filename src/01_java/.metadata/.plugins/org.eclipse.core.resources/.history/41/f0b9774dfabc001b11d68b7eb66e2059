@@ -1,0 +1,23 @@
+package com.lec.ex04_object;
+
+public class Rectangle {
+	private int width;
+	private int height;
+	private String color;
+	
+	
+	public Rectangle() {
+		color = "∞À¡§";
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public Rectangle(int width, int height, String color) {
+		super();
+		this.width = width;
+		this.height = height;
+		this.color = color;
+	}
+	
+	
+}

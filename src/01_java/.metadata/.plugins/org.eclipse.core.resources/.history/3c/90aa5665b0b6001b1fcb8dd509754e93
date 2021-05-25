@@ -1,7 +1,0 @@
-package com.lec.ex02_super;
-
-public class SuperIJ {
-	private int i;
-	private int j;
-	
-}

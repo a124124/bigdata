@@ -1,0 +1,9 @@
+package com.lec.ex04_object;
+
+public class Ex03_rectangleMain {
+	public static void main(String[] args) {
+		Rectangle r1 = new Rectangle(5, 3, "ÆÄ¶û");
+		r1.setWidth(10);
+		Rectangle r2 = r1;
+	}
+}

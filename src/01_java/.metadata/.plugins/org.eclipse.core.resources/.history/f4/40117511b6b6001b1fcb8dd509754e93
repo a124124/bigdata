@@ -1,5 +1,0 @@
-package comd.lec.ex03_point;
-
-public class Point3D extends Point {
-
-}

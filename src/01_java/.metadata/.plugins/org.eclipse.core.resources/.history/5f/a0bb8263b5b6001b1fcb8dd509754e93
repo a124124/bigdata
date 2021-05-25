@@ -1,7 +1,0 @@
-package comd.lec.ex03_point;
-
-public class Point {
-	private int x;
-	private int y;
-	
-}

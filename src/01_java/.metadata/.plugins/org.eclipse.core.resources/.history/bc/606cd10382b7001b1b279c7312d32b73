@@ -1,6 +1,0 @@
-package com.lec.ex11_account;
-
-public class CreditLineAccount extends CheckingAccount{
-	private long creditLine;
-	
-}
