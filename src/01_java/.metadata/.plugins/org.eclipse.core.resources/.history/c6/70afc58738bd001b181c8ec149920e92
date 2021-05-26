@@ -1,0 +1,28 @@
+package com.lec.ex05_lib;
+
+import java.util.Date;
+
+public class BookLib implements ILenderble{
+
+	private String bookNo;
+	private String bookTitle;
+	private String writer;
+	private String borrower;
+	private Date checkOutdate = new Date();
+	private byte state;
+	
+	
+	
+	@Override
+	public void checkOut(String borrower) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void checkIn() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

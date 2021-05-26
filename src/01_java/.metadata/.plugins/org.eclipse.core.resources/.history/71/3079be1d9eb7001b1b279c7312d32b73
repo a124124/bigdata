@@ -1,6 +1,0 @@
-package com.lec.ex03;
-//Super method1(추상), method2(일반)
-//Child method1(추상), method2(일반)
-public abstract class Child extends Super{
-
-}

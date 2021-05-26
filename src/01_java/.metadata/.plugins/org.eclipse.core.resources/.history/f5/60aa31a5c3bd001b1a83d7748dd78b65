@@ -1,0 +1,78 @@
+package com.lec.ex05_lib;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class BookLib implements ILenderble{
+
+	private String bookNo;
+	private String bookTitle;
+	private String writer;
+	private String borrower;
+	private Date date = new Date();
+	private Date checkOutDate = new Date();
+	private Date checkInDate = new Date();
+	private byte state;
+	SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd E요일");
+	
+	
+	
+	public BookLib(String bookNo, String bookTitle, String writer) {
+		super();
+		this.bookNo = bookNo;
+		this.bookTitle = bookTitle;
+		this.writer = writer;
+	}
+
+	@Override
+	public void checkOut(String borrower) {
+		// TODO Auto-generated method stub
+		if(state != STATE_NORMAL) {
+			System.out.println("이미 대출중인 책입니다.");
+			return;
+		}
+		this.borrower = borrower;
+		checkOutDate.getTime();
+		state = STATE_BORROWED;
+		System.out.printf("\"%s \"이(가) ★대출★되었습니다.\n", bookTitle);
+		System.out.printf("[대출인] %s\n", borrower);
+		System.out.printf("[대출일] %1$tY년 %1$tm월 %1$td일(E)\n", date);
+		
+	}
+
+	@Override
+	public void checkIn() {
+		// TODO Auto-generated method stub
+		if(state != STATE_BORROWED) {
+			System.out.println("대출중인 책이 아닙니다.");
+			return;
+		}
+		borrower = null;
+		checkInDate.getTime();
+		state = STATE_NORMAL;
+		System.out.println("\"" + bookTitle + "\" 도서가 반납되었습니다.");
+		long diff = checkInDate.getTime() - checkOutDate.getTime();
+		long day = diff / (1000 * 60 * 60 * 24);
+		System.out.println("대출 기간 : " + day + " 일");
+		if(day > 14) {
+			long money = (day - 14) * 100;
+			System.out.printf("연체료 1일 100원 부가합니다.\n내셔야 할 연체료는 %d원\n", money);
+		}
+		
+	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		if(state != STATE_BORROWED) {
+			return String.format("%s\" %s著 대출가능", bookTitle, writer);
+		}else {
+			return String.format("%s\" %s著 대출%s 중", bookTitle, writer, sdf);
+		}
+		 
+	}
+
+	public void setCheckOutDate(Date checkOutDate) {
+		this.checkOutDate = checkOutDate;
+	}
+
+}

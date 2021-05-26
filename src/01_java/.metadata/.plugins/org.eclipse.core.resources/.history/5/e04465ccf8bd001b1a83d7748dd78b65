@@ -1,0 +1,7 @@
+package com.lec.ex02_map;
+
+public class Ex02_FriendHashMap {
+	public static void main(String[] args) {
+		
+	}
+}

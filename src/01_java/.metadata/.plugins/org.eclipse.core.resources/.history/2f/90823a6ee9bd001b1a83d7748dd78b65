@@ -1,0 +1,16 @@
+package com.lec.ex01_list;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+public class Ex02_LinkedList {
+	public static void main(String[] args) {
+		ArrayList<String> arrayList = new ArrayList<String>();
+		LinkedList<String> linkedList = new LinkedList<String>();
+		linkedList.add("str0"); // 0¹ø ÀÎµ¦½º
+		linkedList.add("str1"); // 1¹ø
+		linkedList.add("str2");
+		
+		
+	}
+}

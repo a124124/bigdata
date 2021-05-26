@@ -1,0 +1,13 @@
+package com.lec.ex02_map;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Ex01_HashMap {
+	public static void main(String[] args) {
+		ArrayList<String> list = new ArrayList<String>();
+		list.add("aaa");
+		HashMap<Integer, String> hashmap = new HashMap<Integer, String>();  // int 는 사용 못하고 Integer 를 써야한다.
+		hashmap.put(11, "str0");
+	}
+}

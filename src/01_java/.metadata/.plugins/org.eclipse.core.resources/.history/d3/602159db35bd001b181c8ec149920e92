@@ -1,0 +1,11 @@
+package com.lec.ex05_lib;
+
+import java.util.Date;
+
+public class DateTestMain {
+	public static void main(String[] args) {
+		Date outTime = new Date(121, 6, 31); // 1900년부터 시작하니 121, 0월부터 시작하니 월-1, 날짜는 그대로
+		System.out.println(outTime);
+		
+	}
+}

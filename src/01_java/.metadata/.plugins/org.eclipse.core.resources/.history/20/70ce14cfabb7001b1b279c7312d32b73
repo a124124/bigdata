@@ -1,5 +1,0 @@
-package cons;
-// PriceTable.RICE
-public class PriceTable {
-	public static final int RICE = 
-}

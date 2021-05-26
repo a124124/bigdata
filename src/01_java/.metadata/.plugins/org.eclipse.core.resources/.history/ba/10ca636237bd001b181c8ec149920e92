@@ -1,0 +1,9 @@
+package com.lec.ex05_lib;
+
+public interface ILenderble {
+	public byte STATE_BORROWED = 1;
+	public byte STATE_NORMAL = 0;
+	public void checkOut(String borrower, String checkOutDate);
+	public void checkIn();
+	
+}

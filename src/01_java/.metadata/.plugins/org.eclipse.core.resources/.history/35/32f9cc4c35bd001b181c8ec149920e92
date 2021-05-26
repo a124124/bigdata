@@ -1,0 +1,7 @@
+package com.lec.ex05_lib;
+
+import java.util.Date;
+
+public class TestMain {
+	Date outTime = new Date();
+}

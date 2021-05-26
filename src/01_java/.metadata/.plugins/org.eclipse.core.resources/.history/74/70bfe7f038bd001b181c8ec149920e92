@@ -1,0 +1,39 @@
+package com.lec.ex05_lib;
+
+import java.util.Date;
+
+public class BookLib implements ILenderble{
+
+	private String bookNo;
+	private String bookTitle;
+	private String writer;
+	private String borrower;
+	private Date checkOutdate = new Date();
+	private byte state;
+	
+	
+	
+	public BookLib(String bookNo, String bookTitle, String writer) {
+		super();
+		this.bookNo = bookNo;
+		this.bookTitle = bookTitle;
+		this.writer = writer;
+	}
+
+	@Override
+	public void checkOut(String borrower) {
+		// TODO Auto-generated method stub
+		if(state != STATE_NORMAL) {
+			System.out.println("이미 대출중인 책입니다.");
+			return;
+		}
+		
+	}
+
+	@Override
+	public void checkIn() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

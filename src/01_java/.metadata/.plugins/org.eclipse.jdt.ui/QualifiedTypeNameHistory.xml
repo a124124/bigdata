@@ -1,23 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.lec.ex05_lunch.Child1"/>
-<fullyQualifiedTypeName name="cons.PriceTable"/>
-<fullyQualifiedTypeName name="com.lec.ex06_car.HighGradeCar"/>
-<fullyQualifiedTypeName name="com.lec.ex06_car.LowGradeCar"/>
-<fullyQualifiedTypeName name="com.lec.ex07_employee.Employee"/>
-<fullyQualifiedTypeName name="com.lec.ex01.InterfaceEx01"/>
-<fullyQualifiedTypeName name="com.lec.ex01.InterfaceEx02"/>
-<fullyQualifiedTypeName name="com.lec.ex02.IAcorp"/>
-<fullyQualifiedTypeName name="com.lec.ex02.Amodel"/>
-<fullyQualifiedTypeName name="com.lec.ex02.Bmodel"/>
-<fullyQualifiedTypeName name="com.lec.ex02.Cmodel"/>
-<fullyQualifiedTypeName name="java.lang.Override"/>
-<fullyQualifiedTypeName name="com.lec.ex04_actor.IFireFighter"/>
-<fullyQualifiedTypeName name="com.lec.ex04_actor.IPoliceMan"/>
-<fullyQualifiedTypeName name="com.lec.ex04_actor.IChef"/>
-<fullyQualifiedTypeName name="com.lec.ex04_actor.Actor"/>
-<fullyQualifiedTypeName name="com.lec.ex05.TestClass"/>
-<fullyQualifiedTypeName name="com.lec.ex05.TestChildClass"/>
 <fullyQualifiedTypeName name="com.lec.ex06_toy.Pooh"/>
 <fullyQualifiedTypeName name="com.lec.ex06_toy.IMissile"/>
 <fullyQualifiedTypeName name="com.lec.ex06_toy.IMoveArmLeg"/>
@@ -46,8 +28,6 @@
 <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
-<fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
 <fullyQualifiedTypeName name="com.lec.ex02_date.Sawon"/>
 <fullyQualifiedTypeName name="com.lec.ex02_date.Part"/>
 <fullyQualifiedTypeName name="com.lec.ex04_object.Person"/>
@@ -58,6 +38,26 @@
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.lang.Cloneable"/>
 <fullyQualifiedTypeName name="com.lec.ex04_object.Point3D"/>
+<fullyQualifiedTypeName name="java.util.Timer"/>
+<fullyQualifiedTypeName name="com.lec.ex07_timer.TimerTaskEx01"/>
+<fullyQualifiedTypeName name="java.util.TimerTask"/>
+<fullyQualifiedTypeName name="com.lec.ex07_timer.TimerTaskEx02"/>
+<fullyQualifiedTypeName name="java.text.DecimalFormat"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.util.InputMismatchException"/>
+<fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="java.lang.Throwable"/>
+<fullyQualifiedTypeName name="com.lec.ex02_throws.ThrowsEx"/>
+<fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
+<fullyQualifiedTypeName name="com.lec.ex03_exceptionEx.Friend"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
+<fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
+<fullyQualifiedTypeName name="com.lec.ex05_lib.ILenderble"/>
+<fullyQualifiedTypeName name="javax.swing.tree.ExpandVetoException"/>
+<fullyQualifiedTypeName name="com.lec.ex05_lib.DateTestMain"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
 </qualifiedTypeNameHistroy>

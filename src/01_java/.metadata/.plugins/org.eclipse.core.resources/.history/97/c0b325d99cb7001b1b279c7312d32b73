@@ -1,9 +1,0 @@
-package com.lec.ex02;
-//Super method1(추상 메소드), method2(일반 메소드)
-//Child method1(일반 메소드), method2(일반 메소드), method3(일반 메소드) 
-public class TestMain {
-	public static void main(String[] args) {
-	//	 Super s = new Super(); // 추상 클래스는 객체를 생성할 수 없다.
-		
-	}
-}
