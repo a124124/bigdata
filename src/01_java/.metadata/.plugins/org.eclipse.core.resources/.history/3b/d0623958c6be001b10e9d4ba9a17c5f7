@@ -1,0 +1,14 @@
+package com.lec.ex02_DatainputStreamDataOutputStream;
+
+public class Product {
+	private String name;
+	private int price;
+	private int ps;
+	public Product(String name, int price, int ps) {
+		super();
+		this.name = name;
+		this.price = price;
+		this.ps = ps;
+	}
+	
+}

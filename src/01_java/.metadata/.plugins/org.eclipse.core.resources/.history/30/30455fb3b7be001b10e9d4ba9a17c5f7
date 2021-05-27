@@ -1,0 +1,7 @@
+package com.lec.ex01_inputStreamOutputStream;
+// 1. 파일을 연다 2. 데이터를 쓴다 3. 파일을 닫는다
+public class Ex03_OutputStream {
+	public static void main(String[] args) {
+		
+	}
+}

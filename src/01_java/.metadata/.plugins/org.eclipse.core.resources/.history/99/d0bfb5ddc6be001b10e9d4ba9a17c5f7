@@ -1,0 +1,11 @@
+package com.lec.ex02_DatainputStreamDataOutputStream;
+
+import java.util.Scanner;
+
+public class Ex03_ProductWrite {
+	public static void main(String[] args) {
+		// n 을 입력할 때까지 재고(상품명, 가격, 재고량)을 출력
+		Scanner sc = new Scanner(System.in);
+		
+	}
+}

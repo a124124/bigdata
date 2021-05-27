@@ -1,0 +1,40 @@
+package com.lec.ex03_set;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class TestMain2 {
+	public static void main(String[] args) {
+		HashMap<String, String> hash = new HashMap<String, String>();
+		Scanner sc = new Scanner(System.in);
+		String name;
+		String tel;
+		String address;
+		
+		do {
+			System.out.println("회원가입하려면 아무키를, 종료는 n을 입력하세요.");
+			String fn = sc.next();
+			if(fn.equalsIgnoreCase("n")) {
+				if(hash.isEmpty()) {
+					System.out.println("입력된 회원이 없습니다");
+					break;
+				}else {
+					System.out.println(hash);
+					break;
+				}
+			} else {
+				sc.nextLine();
+				System.out.println("이름 입력");
+				name = sc.nextLine();
+				System.out.println("전화번호");
+				tel = sc.nextLine();
+				System.out.println("주소");
+				address = sc.nextLine();
+				hash.put(tel, new Customer(name, tel, address));
+			}
+			
+		}while(true);
+		System.out.println("종료");
+		
+	}
+}

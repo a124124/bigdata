@@ -1,0 +1,13 @@
+package com.lec.ex01_DatainputStreamDataOutputStream;
+
+import java.io.DataOutputStream;
+import java.io.OutputStream;
+
+public class Ex01_DataOutputStream {
+	public static void main(String[] args) {
+		OutputStream fos = null;
+		DataOutputStream dos = null;
+		
+		
+	}
+}

@@ -1,0 +1,11 @@
+package com.lec.ex01_inputStreamOutputStream;
+
+import java.io.InputStream;
+import java.io.OutputStream;
+
+public class Ex05_FileCopyStep1 {
+	public static void main(String[] args) {
+		InputStream is = null;
+		OutputStream os = null;
+	}
+}

@@ -1,0 +1,12 @@
+package com.lec.ex03_set;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class TestMain1 {
+	public static void main(String[] args) {
+		ArrayList<Customer> customer = new ArrayList<Customer>();
+		Scanner sc = new Scanner(System.in);
+		
+	}
+}
