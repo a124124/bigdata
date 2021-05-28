@@ -1,7 +1,0 @@
-package singleton.step2;
-
-public class SingletonClass {
-	private static SingletonClass INSTANCE = new SingletonClass();
-	
-	
-}

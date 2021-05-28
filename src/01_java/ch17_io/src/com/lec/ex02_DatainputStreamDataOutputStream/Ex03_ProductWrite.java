@@ -21,12 +21,7 @@ public class Ex03_ProductWrite {
 				System.out.println("입력할 재고가 더 있습니까?(y/n)");
 				answer = sc.next();
 				if(answer.equalsIgnoreCase("N")) {
-					if(fos == null) {
-						System.out.println("재고가 없습니다.");
-						break;
-					}else {
-						break;
-					}
+					break;
 				}else if(answer.equalsIgnoreCase("y")) {
 					System.out.println("상품명");
 					sc.nextLine();

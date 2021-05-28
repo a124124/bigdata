@@ -1,8 +1,0 @@
-package com.lec.ex05;
-
-public class TestMain {
-	public static void main(String[] args) {
-		TestChildClass obj = new TestChildClass();
-		System.out.printf("i1 = %d, i2 = %d, i3 = %d, i11 = %d\n", TestClass.i1, obj.i2, TestChildClass.i3, I11.i11);
-	}
-}

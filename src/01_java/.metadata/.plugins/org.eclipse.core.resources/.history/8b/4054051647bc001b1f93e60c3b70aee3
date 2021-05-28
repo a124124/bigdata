@@ -1,7 +1,0 @@
-package com.lec.ex01_string;
-
-public class Ex10_tokenizing {
-	public static void main(String[] args) {
-		String str = "가 나 다 라 마 바 사 아 자 차 카 타 파 하 가 갸 거 겨 고 겨 구 규 그 기 에 우 미 바 개 케 수 포";
-	}
-}

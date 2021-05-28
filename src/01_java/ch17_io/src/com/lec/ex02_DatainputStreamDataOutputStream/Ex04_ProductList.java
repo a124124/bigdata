@@ -28,7 +28,7 @@ public class Ex04_ProductList {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}catch(IOException e) {
-			System.out.println(e.getMessage());
+			System.out.println("\t재고현황");
 		}finally {
 			try {
 				if(dis != null)

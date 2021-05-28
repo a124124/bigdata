@@ -1,6 +1,0 @@
-package com.lec.ex05;
-
-public interface I11 {
-	public i11 = 11;
-	public void m11();
-}

@@ -1,8 +1,0 @@
-package com.lec.ex07_timer;
-
-public class TimerTestMain {
-	public static void main(String[] args) {
-		System.out.println("Ω√¿€");
-		Timer timer = new Timer();
-	}
-}

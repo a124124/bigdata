@@ -1,7 +1,0 @@
-package singleton.step1;
-
-public class AMain {
-	public static void main(String[] args) {
-		
-	}
-}

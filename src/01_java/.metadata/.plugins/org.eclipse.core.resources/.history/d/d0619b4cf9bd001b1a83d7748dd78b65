@@ -1,9 +1,0 @@
-package com.lec.ex02_map;
-
-import java.util.HashMap;
-
-public class Ex02_FriendHashMap {
-	public static void main(String[] args) {
-		HashMap<String, V>
-	}
-}

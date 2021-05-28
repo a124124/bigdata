@@ -1,8 +1,0 @@
-package com.lec.ex01_string;
-
-public class Ex09_speedcheck {
-	String str = "A";
-	StringBuffer strBuff = new StringBuffer("A");
-	StringBuilder strBuilder = new StringBuilder("A");
-	
-}

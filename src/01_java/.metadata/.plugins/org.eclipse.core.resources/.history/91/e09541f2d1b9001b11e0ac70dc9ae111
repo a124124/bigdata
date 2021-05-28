@@ -1,7 +1,0 @@
-package com.lec.ex11_lib;
-
-public class BookInfo {
-	public String bookNo;
-	public String bookTitle;
-	public String writer;
-}

@@ -1,7 +1,0 @@
-package com.lec.ex02_date;
-
-public class Sawon {
-	private String num;
-	private String name;
-	private String bu;
-}

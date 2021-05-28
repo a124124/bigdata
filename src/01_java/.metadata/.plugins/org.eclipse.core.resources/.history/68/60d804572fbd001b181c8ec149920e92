@@ -1,9 +1,0 @@
-package com.lec.ex03_exceptionEx;
-
-public class Ex {
-	public static void main(String[] args) {
-		String strNo = "1 0        ";
-		int no = Integer.parseInt(strNo.trim());
-		System.out.println(no+1);
-	}
-}

@@ -1,9 +1,0 @@
-package com.lec.ex01_list;
-
-import java.util.Vector;
-
-public class Ex03_Vector {
-	public static void main(String[] args) {
-		Vector<Object>
-	}
-}

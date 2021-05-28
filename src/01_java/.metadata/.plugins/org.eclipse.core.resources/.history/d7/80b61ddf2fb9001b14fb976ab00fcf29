@@ -1,7 +1,0 @@
-package com.lec.ex07;
-
-public class User {
-	public void aUse(A a) {
-		a.method();
-	}
-}

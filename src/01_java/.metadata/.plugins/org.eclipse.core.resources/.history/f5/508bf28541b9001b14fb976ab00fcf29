@@ -1,7 +1,0 @@
-package com.lec.ex10_lib;
-
-public interface ILendable {
-	public void checkOut(String borrower, String time); //¥Î√‚
-	
-	public void checkIn(); // π›≥≥
-}

@@ -1,7 +1,0 @@
-package com.lec.ex04_object;
-
-public class Ex01_personTestMain {
-	public static void main(String[] args) {
-		
-	}
-}

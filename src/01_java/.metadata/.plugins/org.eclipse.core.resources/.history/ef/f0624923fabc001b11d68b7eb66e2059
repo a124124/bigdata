@@ -1,7 +1,0 @@
-package com.lec.ex04_object;
-
-public class Rectangle {
-	private int width;
-	private int height;
-	private String color;
-}

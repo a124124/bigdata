@@ -1,9 +1,0 @@
-package com.lec.ex02_map;
-
-public class Friend {
-	private String name;
-	private String tel;
-	private Date birth;
-	
-	
-}

@@ -1,0 +1,24 @@
+package com.lec.ex01_awt;
+
+import java.awt.Button;
+import java.awt.Frame;
+import java.awt.Label;
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Ex03_login extends Frame implements ActionListener{
+	
+	private Label lbl1;
+	private TextField txtId;
+	private Label lbl2;
+	private TextField txtPw;
+	private Button btnLogin;
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

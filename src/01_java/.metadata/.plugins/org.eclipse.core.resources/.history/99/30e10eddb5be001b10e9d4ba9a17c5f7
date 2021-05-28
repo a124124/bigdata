@@ -1,8 +1,0 @@
-package com.lec.ex01_inputStreamOutputStream;
-
-import java.io.InputStream;
-
-// 1. 파일을 연다 2. 읽는다 3. 파일을 닫는다
-public class Ex02_inputStreamByteArray {
-	InputStream is = null;
-}

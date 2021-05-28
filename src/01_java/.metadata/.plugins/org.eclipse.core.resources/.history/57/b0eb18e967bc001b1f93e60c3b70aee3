@@ -1,8 +1,0 @@
-package com.lec.ex02_date;
-
-public class TestMain {
-	public static void main(String[] args) {
-		Sawon s1 = new Sawon("a01", "홍길동", Part.COMPUTER);
-		Sawon s2 = new Sawon("a02", "이길동", Part.ACCOUNTING);
-	}
-}

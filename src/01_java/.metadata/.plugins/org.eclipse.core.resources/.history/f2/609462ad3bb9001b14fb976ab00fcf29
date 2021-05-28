@@ -1,7 +1,0 @@
-package com.lec.ex09_robot;
-
-public class SingRobot {
-	public void sing() {
-		System.out.println("노래를 합니다");
-	}
-}

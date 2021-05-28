@@ -1,0 +1,7 @@
+package com.lec.ex02_swing;
+
+import javax.swing.JFrame;
+
+public class Ex01_Friday extends JFrame{
+	
+}

@@ -1,7 +1,0 @@
-package com.lec.ex02_date;
-
-public class TestMain {
-	public static void main(String[] args) {
-		Sawon[] sawons = {new 
-	}
-}
