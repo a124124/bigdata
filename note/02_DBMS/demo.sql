@@ -119,4 +119,3 @@ SET TERMOUT ON
 PROMPT Demonstration table build is complete.
 
 EXIT
-
