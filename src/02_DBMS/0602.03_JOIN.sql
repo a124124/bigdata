@@ -49,3 +49,299 @@ SELECT ENAME, JOB, SAL, DNAME, LOC
     FROM EMP E, DEPT D
     WHERE E.DEPTNO = D.DEPTNO AND LOC = 'CHICAGO'
     ORDER BY ENAME;
+    
+    
+    
+    
+SELECT *
+    FROM EMP
+    WHERE ENAME = 'SCOTT';
+    
+SELECT *
+    FROM SALGRADE;
+    
+    
+    
+SELECT * 
+    --CROSS 5행 = EMP 1행 * SALGRADE 5행
+    FROM EMP, SALGRADE
+--    WHERE SAL >= LOSAL AND SAL <= HISAL AND ENAME = 'SCOTT';
+    WHERE SAL BETWEEN LOSAL AND HISAL AND ENAME = 'SCOTT';
+    
+    -- 모든 사원의 사번, 이름, JOB, 상사, 급여, 급여등급(1등급, 2등급)
+SELECT EMPNO, ENAME, JOB, MGR, SAL, GRADE||'등급' "GRADE"
+    FROM EMP, SALGRADE
+    WHERE SAL BETWEEN LOSAL AND HISAL;
+    
+    --COMM이 NULL 이 아닌 사원의 이름, 급여, 급여 등급, 부서번호, 부서이름, 근무지
+SELECT ENAME, SAL, GRADE, E.DEPTNO, DNAME, LOC
+    FROM EMP E, DEPT D, SALGRADE
+    WHERE E.DEPTNO = D.DEPTNO AND SAL BETWEEN LOSAL AND HISAL AND NOT COMM IS NULL;
+    
+    
+    --ENAME, SAL, HIREDATE, GRADE
+SELECT ENAME, SAL, HIREDATE, GRADE
+    FROM EMP, SALGRADE
+    WHERE SAL BETWEEN LOSAL AND HISAL;
+   
+    
+    --ENAME, SAL, HIREDATE, GRADE, DNAME, LOC
+SELECT ENAME, SAL, HIREDATE, GRADE, DNAME, LOC
+    FROM EMP E, DEPT D, SALGRADE
+    WHERE E.DEPTNO = D.DEPTNO AND SAL BETWEEN LOSAL AND HISAL;
+    
+    --ENAME, SAL, GRADE, SAL*12 + NVL(COMM, 0) -- 부서번호, 연봉정렬
+SELECT ENAME, SAL, GRADE, SAL*12 + NVL(COMM, 0) 연봉
+    FROM EMP, SALGRADE
+    WHERE SAL BETWEEN LOSAL AND HISAL
+    ORDER BY DEPTNO, 연봉;
+
+
+    --ENAME, JOB, SAL, GRADE, DEPTNO, DNAME  -- SAL이 1000~3000, 부서, 업무, 급여큰순 정렬
+SELECT ENAME, JOB, SAL, GRADE, E.DEPTNO, DNAME
+    FROM EMP E, DEPT D, SALGRADE
+    WHERE E.DEPTNO = D.DEPTNO AND SAL BETWEEN LOSAL AND HISAL AND SAL BETWEEN 1000 AND 3000
+    ORDER BY DNAME, JOB, SAL DESC;
+    
+    -- ENAME, SAL, GRADE, HIREDATE, LOC -- 81년 입사한 사람만 등급높은순 정렬    
+SELECT ENAME, SAL, GRADE, HIREDATE, LOC
+    FROM EMP E, DEPT D, SALGRADE
+    WHERE E.DEPTNO = D.DEPTNO AND SAL BETWEEN LOSAL AND HISAL AND TO_CHAR(HIREDATE, 'RR') = 81
+    ORDER BY GRADE DESC;
+    
+    
+    
+-- SELF JOIN
+SELECT EMPNO, ENAME, MGR
+    FROM EMP   
+    WHERE ENAME = 'SMITH'; -- 상사의 사번 7566
+    
+SELECT EMPNO, ENAME
+    FROM EMP
+    WHERE EMPNO = 7902;
+    
+SELECT WORKER.EMPNO, WORKER.ENAME, WORKER.MGR, MANAGER.ENAME
+    FROM EMP WORKER, EMP MANAGER
+    WHERE WORKER.ENAME = 'SMITH' AND WORKER.MGR = MANAGER.EMPNO;
+    
+
+-- 모든 사원의 사번, 이름, 상사의 사번, 상사의 이름
+
+SELECT W.EMPNO, W.ENAME, W.MGR, M.ENAME
+    FROM EMP W, EMP M
+    WHERE W.MGR = M.EMPNO; -- (KING 의 MGR이 NULL 이라 출력이 되지않음)
+    
+-- 'SMITH의 상사는 FORD다'
+
+SELECT W.ENAME||'의 상사는 '||M.ENAME||'다' "MESSAGE"
+    FROM EMP W, EMP M
+    WHERE W.MGR = M.EMPNO;
+    
+    -- 1. 상사의 이름이 KING인 사원들의 이름과 JOB 출력
+SELECT W.ENAME, W.JOB 
+    FROM EMP W, EMP M
+    WHERE W.MGR = M.EMPNO AND M.ENAME = 'KING';
+    
+    
+    -- 2. SCOTT 과 동일한 부서번호에서 근무하는 사람의 이름 출력
+SELECT S.ENAME
+    FROM EMP W, EMP S
+    WHERE W.DEPTNO = S.DEPTNO AND W.ENAME = 'SCOTT' AND S.ENAME != 'SCOTT';
+
+SELECT ENAME
+    FROM EMP
+    WHERE DEPTNO = 20;
+    
+    
+    
+    -- 3. SCOTT 과 동일한 근무지에서 근무하는 사람의 이름 출력
+INSERT INTO DEPT VALUES (50,'IT','DALLAS');
+INSERT INTO EMP VALUES(9999,'AL',NULL,NULL,NULL,9000,NULL,50);
+SELECT * 
+    FROM DEPT;
+SELECT * 
+    FROM EMP 
+    WHERE ENAME = 'SCOTT';
+
+SELECT S.ENAME
+    FROM EMP W, EMP S, DEPT D1, DEPT D2 
+    
+    WHERE W.ENAME = 'SCOTT' 
+        AND W.DEPTNO = D1.DEPTNO 
+        AND S.DEPTNO = D2.DEPTNO 
+        AND D1.LOC = D2.LOC 
+        AND S.ENAME != 'SCOTT';
+    
+    
+ROLLBACK;  -- DML 취소
+
+SELECT * 
+    FROM DEPT;
+    
+    
+    
+ -- OUTER JOIN : 조인시 조건에 만족하지 않는 행까지 나타나게
+ 
+ SELECT W.ENAME, W.MGR, M.EMPNO, M.ENAME
+    FROM EMP W, EMP M
+    WHERE W.MGR = M.EMPNO(+);
+    
+    -- "SMITH의 매니저는 FORD 입니다"
+    -- KING 의 매니저는 없습니다
+SELECT W.ENAME || '의 매니저는 ' || NVL(M.ENAME, '없다') || '입니다' MSG
+    FROM EMP W, EMP M
+    WHERE W.MGR = M.EMPNO(+);
+    
+    
+    -- 말단사원의 이름
+    
+SELECT W.ENAME, W.MGR, M.EMPNO, M.ENAME
+    FROM EMP W, EMP M
+    WHERE W.MGR(+) = M.EMPNO AND W.ENAME IS NULL;
+    
+SELECT M.EMPNO, M.ENAME
+    FROM EMP W, EMP M
+    WHERE W.MGR(+) = M.EMPNO AND W.ENAME IS NULL;
+    
+    
+    
+    
+--
+SELECT * 
+    FROM DEPT;  -- 10, 20, 30, 40
+SELECT * 
+    FROM EMP; -- 10, 20, 30
+SELECT * 
+    FROM EMP E, DEPT D
+    WHERE E.DEPTNO(+) = D.DEPTNO; -- 40번은 출력되지않음
+    
+    
+    
+-- EMP DEPT SALGRADE
+
+-- ★ <연습문제> PART1
+--1. 이름, 직속상사
+SELECT W.ENAME, M.ENAME MANAGER, W.SAL * 12 ANNUAL_SAL
+    FROM EMP W, EMP M
+    WHERE W.MGR = M.EMPNO(+);
+
+
+--2. 이름, 급여, 업무, 직속상사
+SELECT W.ENAME, W.SAL, W.JOB, M.ENAME MANAGER
+    FROM EMP W, EMP M
+    WHERE W.MGR = M.EMPNO(+);
+
+
+--3. 이름, 급여, 업무, 직속상사. (상사가 없는 직원까지 전체 직원 다 출력.
+    --상사가 없을 시 '없음'으로 출력)
+SELECT W.ENAME, W.SAL, W.JOB, NVL(M.ENAME, '없음') MANAGER
+    FROM EMP W, EMP M
+    WHERE W.MGR = M.EMPNO(+);
+    
+    
+
+--4. 이름, 급여, 부서명, 직속상사명
+SELECT W.ENAME, W.SAL, DNAME, M.ENAME MANAGER
+    FROM EMP W, EMP M, DEPT
+    WHERE DEPT.DEPTNO = W.DEPTNO AND W.MGR = M.EMPNO(+);
+
+
+--5. 이름, 급여, 부서코드, 부서명, 근무지, 직속상사명, (상사가 없는 직원까지 전체 직원 다 출력)
+SELECT W.ENAME, W.SAL, W.DEPTNO, DNAME, M.ENAME MANAGER
+    FROM EMP W, EMP M, DEPT D
+    WHERE W.DEPTNO = D.DEPTNO AND W.MGR = M.EMPNO(+);
+--6. 이름, 급여, 등급, 부서명, 직속상사명. 급여가 2000이상인 사람
+SELECT W.ENAME, W.SAL, GRADE, DNAME, M.ENAME MANAGER
+    FROM EMP W, EMP M, DEPT D, SALGRADE
+    WHERE W.DEPTNO = D.DEPTNO AND W.MGR = M.EMPNO(+) AND W.SAL BETWEEN LOSAL AND HISAL AND W.SAL >= 2000;
+
+--7. 이름, 급여, 등급, 부서명, 직속상사명, (직속상사가 없는 직원까지 전체직원 부서명 순 정렬)
+SELECT W.ENAME, W.SAL, GRADE, DNAME, M.ENAME MANAGER
+    FROM EMP W, EMP M, DEPT D, SALGRADE
+    WHERE W.DEPTNO = D.DEPTNO AND W.MGR = M.EMPNO(+) AND W.SAL BETWEEN LOSAL AND HISAL
+    ORDER BY DNAME;
+
+--8. 이름, 급여, 등급, 부서명, 연봉, 직속상사명. 연봉=(급여+comm)*12 단 comm이 null이면 0
+SELECT W.ENAME, W.SAL, GRADE, DNAME, M.ENAME MANAGER, (W.SAL + NVL(W.COMM, 0)) * 12 ANNUAL_SAL
+    FROM EMP W, EMP M, DEPT D, SALGRADE
+    WHERE W.DEPTNO = D.DEPTNO AND W.MGR = M.EMPNO(+) AND W.SAL BETWEEN LOSAL AND HISAL;
+--9. 8번을 부서명 순 부서가 같으면 급여가 큰 순 정렬
+SELECT W.ENAME, W.SAL, GRADE, DNAME, M.ENAME MANAGER, (W.SAL + NVL(W.COMM, 0)) * 12 ANNUAL_SAL
+    FROM EMP W, EMP M, DEPT D, SALGRADE
+    WHERE W.DEPTNO = D.DEPTNO AND W.MGR = M.EMPNO(+) AND W.SAL BETWEEN LOSAL AND HISAL
+    ORDER BY W.SAL DESC;
+
+    
+--  ★ <연습문제> PART2
+--1.EMP 테이블에서 모든 사원에 대한 이름,부서번호,부서명을 출력하는 SELECT 문장을 작성하여라.
+SELECT ENAME, EMPNO, DNAME
+    FROM EMP E, DEPT D
+    WHERE E.DEPTNO = D.DEPTNO;
+
+
+
+--2. EMP 테이블에서 NEW YORK에서 근무하고 있는 사원에 대하여 이름,업무,급여,부서명을 출력
+
+SELECT ENAME, JOB, SAL, DNAME
+    FROM EMP E, DEPT D
+    WHERE E.DEPTNO = D.DEPTNO AND LOC = 'NEW YORK';
+    
+
+--3. EMP 테이블에서 보너스를 받는 사원에 대하여 이름,부서명,위치를 출력
+SELECT ENAME, DNAME, LOC, COMM
+    FROM EMP E, DEPT D
+    WHERE E.DEPTNO = D.DEPTNO AND NOT COMM IS NULL AND COMM != 0;
+
+--4. EMP 테이블에서 이름 중 L자가 있는 사원에 대하여 이름,업무,부서명,위치를 출력
+SELECT ENAME, JOB, DNAME, LOC
+    FROM EMP E, DEPT D
+    WHERE E.DEPTNO = D.DEPTNO AND ENAME LIKE '%L%';
+
+
+
+--5. 사번, 사원명, 부서코드, 부서명을 검색하라. 사원명기준으로 오름차순정열
+SELECT EMPNO, ENAME, E.DEPTNO, DNAME
+    FROM EMP E, DEPT D
+    WHERE E.DEPTNO = D.DEPTNO
+    ORDER BY ENAME;
+    
+
+
+
+--6. 사번, 사원명, 급여, 부서명을 검색하라. 
+    --단 급여가 2000이상인 사원에 대하여 급여를 기준으로 내림차순으로 정열하시오
+SELECT EMPNO, ENAME, SAL, DNAME
+    FROM EMP E, DEPT D
+    WHERE E.DEPTNO = D.DEPTNO AND SAL >= 2000
+    ORDER BY SAL DESC;
+    
+
+--7. 사번, 사원명, 업무, 급여, 부서명을 검색하시오. 단 업무가 MANAGER이며 급여가 2500이상인
+-- 사원에 대하여 사번을 기준으로 오름차순으로 정열하시오.
+SELECT EMPNO, ENAME, JOB, SAL, DNAME
+    FROM EMP E, DEPT D
+    WHERE E.DEPTNO = D.DEPTNO AND JOB = 'MANAGER' AND SAL >= 2500
+    ORDER BY EMPNO;
+
+
+--8. 사번, 사원명, 업무, 급여, 등급을 검색하시오. 단, 급여기준 내림차순으로 정렬하시오
+SELECT EMPNO, ENAME, JOB, SAL, GRADE
+    FROM EMP, SALGRADE 
+    WHERE SAL BETWEEN LOSAL AND HISAL
+    ORDER BY SAL DESC;
+
+
+
+--9. 사원테이블에서 사원명, 사원의 상사를 검색하시오(상사가 없는 직원까지 전체)
+SELECT W.ENAME, M.ENAME
+    FROM EMP W, EMP M
+    WHERE 
+
+
+
+--10. 사원명, 상사명, 상사의 상사명을 검색하시오
+
+--11. 위의 결과에서 상위 상사가 없는 모든 직원의 이름도 출력되도록 수정하시오
+
+    
+    
