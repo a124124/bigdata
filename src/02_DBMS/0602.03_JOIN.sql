@@ -333,15 +333,22 @@ SELECT EMPNO, ENAME, JOB, SAL, GRADE
 
 
 --9. 사원테이블에서 사원명, 사원의 상사를 검색하시오(상사가 없는 직원까지 전체)
-SELECT W.ENAME, M.ENAME
+SELECT W.ENAME, M.ENAME MANAGER
     FROM EMP W, EMP M
-    WHERE 
+    WHERE W.MGR = M.EMPNO(+);
 
 
 
 --10. 사원명, 상사명, 상사의 상사명을 검색하시오
+SELECT W.ENAME, M.ENAME MANAGER, M2.ENAME MANA
+    FROM EMP W, EMP M, EMP M2  
+    WHERE W.MGR = M.EMPNO AND M.MGR = M2.EMPNO(+);
+
+
 
 --11. 위의 결과에서 상위 상사가 없는 모든 직원의 이름도 출력되도록 수정하시오
 
-    
+SELECT W.ENAME, M.ENAME MANAGER, M2.ENAME MANA
+    FROM EMP W, EMP M, EMP M2  
+    WHERE W.MGR = M.EMPNO(+) AND M.MGR = M2.EMPNO(+);    
     
