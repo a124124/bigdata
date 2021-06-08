@@ -620,7 +620,10 @@ SELECT JOB
     
 SELECT ENAME, JOB
     FROM EMP
-    WHERE ;
+    WHERE DEPTNO = '10' AND JOB IN (SELECT JOB
+                                        FROM EMP
+                                        WHERE DEPTNO = '30'
+                                        GROUP BY JOB);
 
 
 -- 20.  FORD와 업무도 월급도 같은 사원의 모든 필드
@@ -660,17 +663,72 @@ SELECT ENAME, JOB, EMPNO, SAL
 
 -- 22. SCOTT 또는 WARD와 월급이 같은 사원의 정보를 이름,업무,급여
 
+SELECT ENAME, JOB, SAL FROM EMP
+    WHERE SAL IN (SELECT SAL FROM EMP WHERE ENAME = 'SCOTT' OR ENAME = 'WARD');
+
 
 
 -- 23. CHICAGO에서 근무하는 사원과 같은 업무를 하는 사원들의 이름,업무
 
+
+
 -- 24. 부서별로 월급이 평균 월급보다 높은 사원을 사번, 이름, 급여
+SELECT EMPNO, ENAME, SAL, DEPTNO,  (SELECT AVG(SAL) FROM EMP WHERE DEPTNO = E.DEPTNO) AVG
+    FROM EMP E
+    WHERE SAL > (SELECT AVG(SAL) FROM EMP WHERE DEPTNO = E.DEPTNO);
+    
+
+
+
 
 -- 25. 업무별로 평균 월급보다 적은 월급을 받는 사원을 부서번호, 이름, 급여
 
+SELECT DEPTNO, ENAME, SAL, JOB
+    FROM EMP E
+    WHERE SAL < (SELECT AVG(SAL)
+                 FROM EMP
+                 WHERE JOB = E.JOB);
+
+
+
 -- 26. 적어도 한 명 이상으로부터 보고를 받을 수 있는 사원을 업무, 이름, 사번, 부서번호를 출력(단, 부서번호 순으로 오름차순 정렬)
+SELECT JOB, ENAME, EMPNO, DEPTNO
+    FROM EMP M
+    WHERE EXISTS (SELECT *
+                    FROM EMP
+                    WHERE MGR = M.EMPNO);       -- EXISTS 이용
+                    
+SELECT JOB, ENAME, EMPNO, DEPTNO
+    FROM EMP
+    WHERE EMPNO IN (SELECT MGR  
+                        FROM EMP);         --  IN 이용
+    
+    
+SELECT DISTINCT M.JOB, M.ENAME, M.EMPNO, M.DEPTNO
+    FROM EMP W, EMP M
+    WHERE W.MGR = M.EMPNO;
+
+
 
 -- 27.  말단 사원의 사번, 이름, 업무, 부서번호
+
+
+SELECT JOB, ENAME, EMPNO, DEPTNO
+    FROM EMP M
+    WHERE NOT EXISTS (SELECT *
+                        FROM EMP
+                        WHERE NOT MGR IS NULL);
+                        
+                        
+SELECT JOB, ENAME, EMPNO, DEPTNO
+    FROM EMP
+    WHERE EMPNO NOT IN(7902, 7698);
+    
+    
+    
+SELECT W.ENAME, M.JOB, M.ENAME, M.EMPNO, M.DEPTNO
+    FROM EMP W, EMP M
+    WHERE W.MGR(+) = M.EMPNO AND W.ENAME IS NULL;
     
     
     

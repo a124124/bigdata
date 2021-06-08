@@ -1,0 +1,152 @@
+    --[VIII] SEQUENCE ; 순차번호 생성기 , 대부분 인위적인 PK 사용 용도.
+    
+    
+DROP SEQUENCE FRIEND_SEQ;
+
+CREATE SEQUENCE FRIEND_SEQ
+    START WITH 1
+    INCREMENT BY 1
+    MAXVALUE 9999
+    MINVALUE 1
+    NOCACHE
+    NOCYCLE;
+    
+    
+DROP TABLE FRIEND;
+
+CREATE TABLE FRIEND(
+    NUM NUMBER(4) PRIMARY KEY,
+    NAME VARCHAR2(30) NOT NULL,
+    TEL VARCHAR(20) UNIQUE,
+    ADDRESS VARCHAR2(100),
+    LAST_MODIFYED DATE DEFAULT SYSDATE
+);
+
+
+INSERT INTO FRIEND (NUM, NAME, TEL, ADDRESS) 
+    VALUES (FRIEND_SEQ.NEXTVAL, '홍길등', NULL, '서울시');
+    
+INSERT INTO FRIEND (NUM, NAME, TEL, ADDRESS) 
+    VALUES (FRIEND_SEQ.NEXTVAL, '홍길등', '01048529484', '서울시 마포구');
+
+INSERT INTO FRIEND (NUM, NAME, TEL, ADDRESS) 
+    VALUES (FRIEND_SEQ.NEXTVAL, '홍구구', '01085729487', '서울시 마포구');    
+    
+SELECT *
+    FROM FRIEND;
+    
+    
+SELECT FRIEND_SEQ.CURRVAL
+    FROM DUAL;
+    
+    
+COMMIT;
+--
+--CREATE SEQUENCE FRIEND_SEQ
+--    START WITH 1
+--    INCREMENT BY 1
+--    MAXVALUE 9999
+--    MINVALUE 1
+--    NOCACHE
+--    NOCYCLE;
+
+DROP SEQUENCE TEST_SEQ;
+CREATE SEQUENCE TEST_SEQ
+    MAXVALUE 999999
+    NOCACHE
+    NOCYCLE;
+    
+    
+SELECT TEST_SEQ.NEXTVAL
+    FROM DUAL;
+SELECT TEST_SEQ.CURRVAL 
+    FROM DUAL;
+    
+--    [요구사항]
+--(1) 같은 이름의 테이블이나 시퀀스가 있을 수 있으니 먼저 삭제하고 테이블을 생성하시오
+--(2) CUSTOMER 테이블은 필드 별로 다음의 제약조건을 지켜 생성하시오.
+--	① CNO : 주 키
+--	② CNAME : NULL값을 입력할 수 없다
+--	③ JOINDATE : 입력하지 않을 시, 기본적으로 현재날짜로 입력된다.
+--	④ PHONE : 모든 데이터는 PHONE 값이 모두 다르게 입력된다.
+--	⑤ LEVELNO : CUS_LEVEL 테이블의 LEVELNO 필드를 참조하는 외래키
+--(3) CUS_LEVEL 테이블은 필드 별로 다음의 제약조건을 지킨다.
+--	① LEVELNO : 주키
+--	② LEVELNAME : NULL값을 입력할 수 없다	
+--(4) CUSTOMER 테이블의 CNO번호는 시퀀스(CUS_SQ)를 생성한 뒤 자동생성 번호로 입력되도록 한다
+
+    
+    
+    -- (1) 같은 이름의 테이블이나 시퀀스가 있을 수 있으니 먼저 삭제하고 테이블을 생성하시오
+DROP SEQUENCE CUS_SQ;
+
+CREATE SEQUENCE CUS_SQ
+    MAXVALUE 999
+    NOCACHE
+    NOCYCLE;
+
+    --(3) CUS_LEVEL 테이블은 필드 별로 다음의 제약조건을 지킨다.
+    --	① LEVELNO : 주키
+    --	② LEVELNAME : NULL값을 입력할 수 없다	
+        
+CREATE TABLE CUS_LEVEL(
+    LEVELNO NUMBER(2) PRIMARY KEY,
+    LEVELNAME VARCHAR2(10) NOT NULL
+);
+
+SELECT *
+    FROM CUS_LEVEL;
+    
+   --(2) CUSTOMER 테이블은 필드 별로 다음의 제약조건을 지켜 생성하시오.
+--	① CNO : 주 키
+--	② CNAME : NULL값을 입력할 수 없다
+--	③ JOINDATE : 입력하지 않을 시, 기본적으로 현재날짜로 입력된다.
+--	④ PHONE : 모든 데이터는 PHONE 값이 모두 다르게 입력된다.
+--	⑤ LEVELNO : CUS_LEVEL 테이블의 LEVELNO 필드를 참조하는 외래키
+
+DROP TABLE CUSTOMER;
+
+CREATE TABLE CUSTOMER(
+    CNO NUMBER(4) PRIMARY KEY,
+    CNAME VARCHAR2(30) NOT NULL,
+    JOINDATE DATE DEFAULT SYSDATE,
+    PHONE VARCHAR2(20) UNIQUE,
+    POINT NUMBER(6),
+    LEVELNO NUMBER(2),
+    FOREIGN KEY(LEVELNO) REFERENCES CUS_LEVEL(LEVELNO)
+);
+    
+SELECT *
+    FROM CUSTOMER;
+    
+    
+    --(4) CUSTOMER 테이블의 CNO번호는 시퀀스(CUS_SQ)를 생성한 뒤 자동생성 번호로 입력되도록 한다
+    
+INSERT INTO CUS_LEVEL VALUES(1, 'VVIP');
+INSERT INTO CUS_LEVEL VALUES(2, 'VIP');
+INSERT INTO CUS_LEVEL VALUES(3, 'NORMAL');
+INSERT INTO CUS_LEVEL VALUES(4, 'BLACK');
+
+SELECT *
+    FROM CUS_LEVEL;
+    
+    
+INSERT INTO CUSTOMER (CNO, CNAME, JOINDATE, PHONE, POINT, LEVELNO)
+    VALUES (CUS_SQ.NEXTVAL, '홍길동', '21/06/10', '010-9999-9999', 0, 1);
+INSERT INTO CUSTOMER (CNO, CNAME, JOINDATE, PHONE, POINT, LEVELNO)
+    VALUES (CUS_SQ.NEXTVAL, '이철수', '21/11/12', '010-8888-8888', NULL, 2);
+  
+
+UPDATE CUSTOMER
+    SET POINT = 300
+    WHERE CNAME = '홍길동';
+    
+SELECT CNO, CNAME, JOINDATE, PHONE, POINT, LEVELNAME
+    FROM CUS_LEVEL L, CUSTOMER C
+    WHERE L.LEVELNO = C.LEVELNO;
+    
+    
+SELECT *
+    FROM CUSTOMER;
+    
+COMMIT;
