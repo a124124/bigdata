@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="8" version="2.0">
+<workbench progressCount="14" version="2.0">
 <workbenchAdvisor/>
-<window height="768" maximized="true" width="1024" x="130" y="130">
+<window height="1047" width="974" x="953" y="0">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -26,12 +26,38 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+</presentation>
+</folder>
+</info>
+<info part="org.eclipse.ui.internal.EditorStack@65a2e7" ratio="0.49967638" ratioLeft="772" ratioRight="773" relationship="2" relative="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="dept_emp.exerd" partName="dept_emp.exerd" path="D:/jk/bigdata/src/03_exERD/newProject/dept_emp.exerd" title="dept_emp.exerd" tooltip="newProject/dept_emp.exerd" workbook="DefaultEditorWorkbook">
+<editor id="com.tomato.exerd.editor.DiagramEditor" name="dept_emp.exerd" partName="dept_emp.exerd" path="D:/jk/bigdata/src/03_exERD/newProject/dept_emp.exerd" title="dept_emp.exerd" tooltip="newProject/dept_emp.exerd" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/newProject/dept_emp.exerd"/>
+</editor>
+<editor id="com.tomato.exerd.editor.DiagramEditor" name="book.exerd" partName="book.exerd" path="D:/jk/bigdata/src/03_exERD/newProject/book.exerd" title="book.exerd" tooltip="newProject/book.exerd" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/newProject/book.exerd"/>
+</editor>
+<editor id="com.tomato.exerd.editor.DiagramEditor" name="STUDENT.exerd" partName="STUDENT.exerd" path="D:/jk/bigdata/src/03_exERD/newProject/STUDENT.exerd" title="STUDENT.exerd" tooltip="newProject/STUDENT.exerd" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/newProject/STUDENT.exerd"/>
+</editor>
+<editor id="com.tomato.exerd.editor.DiagramEditor" name="CUSTOMER.exerd" partName="CUSTOMER.exerd" path="D:/jk/bigdata/src/03_exERD/newProject/CUSTOMER.exerd" title="CUSTOMER.exerd" tooltip="newProject/CUSTOMER.exerd" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/newProject/CUSTOMER.exerd"/>
+</editor>
+<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="SHOPPING.exerd" partName="SHOPPING.exerd" path="D:/jk/bigdata/src/03_exERD/newProject/SHOPPING.exerd" title="SHOPPING.exerd" tooltip="newProject/SHOPPING.exerd" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/newProject/SHOPPING.exerd"/>
+</editor>
+<editor focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="shoppingmall.exerd" partName="shoppingmall.exerd" path="D:/jk/bigdata/src/03_exERD/newProject/shoppingmall.exerd" title="shoppingmall.exerd" tooltip="newProject/shoppingmall.exerd" workbook="org.eclipse.ui.internal.EditorStack@65a2e7">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/newProject/shoppingmall.exerd"/>
 </editor>
 </editors>
 <views>
@@ -44,7 +70,7 @@
 <element path="/newProject"/>
 </expanded>
 <selection>
-<element path="/newProject/dept_emp.exerd"/>
+<element path="/newProject/shoppingmall.exerd"/>
 </selection>
 </viewState>
 </view>
@@ -165,8 +191,52 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/newProject/dept_emp.exerd"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/newProject/book.exerd"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/newProject/STUDENT.exerd"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/newProject/CUSTOMER.exerd"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/newProject/SHOPPING.exerd"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/newProject/shoppingmall.exerd"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/newProject/SHOPPING.exerd"/>
 </editors>
-<item active="true" historyLabel="dept_emp.exerd" index="0"/>
+<item historyLabel="dept_emp.exerd" index="0"/>
+<item historyLabel="book.exerd" index="1"/>
+<item historyLabel="dept_emp.exerd" index="0"/>
+<item historyLabel="book.exerd" index="1"/>
+<item historyLabel="dept_emp.exerd" index="0"/>
+<item historyLabel="book.exerd" index="1"/>
+<item historyLabel="dept_emp.exerd" index="0"/>
+<item historyLabel="book.exerd" index="1"/>
+<item historyLabel="dept_emp.exerd" index="0"/>
+<item historyLabel="book.exerd" index="1"/>
+<item historyLabel="dept_emp.exerd" index="0"/>
+<item historyLabel="book.exerd" index="1"/>
+<item historyLabel="dept_emp.exerd" index="0"/>
+<item historyLabel="book.exerd" index="1"/>
+<item historyLabel="dept_emp.exerd" index="0"/>
+<item historyLabel="book.exerd" index="1"/>
+<item historyLabel="dept_emp.exerd" index="0"/>
+<item historyLabel="book.exerd" index="1"/>
+<item historyLabel="dept_emp.exerd" index="0"/>
+<item historyLabel="book.exerd" index="1"/>
+<item historyLabel="dept_emp.exerd" index="0"/>
+<item historyLabel="book.exerd" index="1"/>
+<item historyLabel="dept_emp.exerd" index="0"/>
+<item historyLabel="book.exerd" index="1"/>
+<item historyLabel="STUDENT.exerd" index="2"/>
+<item historyLabel="book.exerd" index="1"/>
+<item historyLabel="STUDENT.exerd" index="2"/>
+<item historyLabel="CUSTOMER.exerd" index="3"/>
+<item historyLabel="SHOPPING.exerd" index="4"/>
+<item historyLabel="CUSTOMER.exerd" index="3"/>
+<item historyLabel="STUDENT.exerd" index="2"/>
+<item historyLabel="CUSTOMER.exerd" index="3"/>
+<item historyLabel="SHOPPING.exerd" index="4"/>
+<item historyLabel="shoppingmall.exerd" index="5"/>
+<item historyLabel="SHOPPING.exerd" index="4"/>
+<item historyLabel="shoppingmall.exerd" index="5"/>
+<item historyLabel="SHOPPING.exerd" index="4"/>
+<item historyLabel="shoppingmall.exerd" index="5"/>
+<item active="true" historyLabel="SHOPPING.exerd" index="6"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -184,6 +254,21 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="shoppingmall.exerd" tooltip="newProject/shoppingmall.exerd">
+<persistable path="/newProject/shoppingmall.exerd"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="SHOPPING.exerd" tooltip="newProject/SHOPPING.exerd">
+<persistable path="/newProject/SHOPPING.exerd"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="CUSTOMER.exerd" tooltip="newProject/CUSTOMER.exerd">
+<persistable path="/newProject/CUSTOMER.exerd"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="STUDENT.exerd" tooltip="newProject/STUDENT.exerd">
+<persistable path="/newProject/STUDENT.exerd"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="book.exerd" tooltip="newProject/book.exerd">
+<persistable path="/newProject/book.exerd"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="dept_emp.exerd" tooltip="newProject/dept_emp.exerd">
 <persistable path="/newProject/dept_emp.exerd"/>
 </file>
