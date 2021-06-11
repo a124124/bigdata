@@ -1,0 +1,8 @@
+package com.lec.ex3_insert;
+
+public class InsertDept {
+	public static void main(String[] args) {
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+	}
+}

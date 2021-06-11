@@ -1,0 +1,16 @@
+package com.lec.ex0_conn;
+
+public class Ex01_ConnOracle {
+	public static void main(String[] args) {
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+		//1. 드라이버 로드
+		try {
+			Class.forName(driver);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage() + " : 드라이버 오류");
+		}
+		
+	}
+}

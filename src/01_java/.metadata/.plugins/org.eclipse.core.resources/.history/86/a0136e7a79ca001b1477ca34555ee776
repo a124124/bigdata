@@ -1,0 +1,22 @@
+package com.lec.ex4_update;
+
+import java.sql.Connection;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class UpdateDept {
+	public static void main(String[] args) {
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+		Connection conn = null;	// DB연결 변수
+		Statement stmt = null;	
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("수정할 부서번호");
+		String deptno = scanner.next();
+		System.out.println("변경할 부서이름 입력");
+		String dname = scanner.next();
+		System.out.println("변경된 부서위치");
+		String loc = scanner.next();
+		String sql = "UPDATE DEPT SET DNAME = 'IT', LOC = 'MAPO' WHERE DEPTNO = 50";
+	}
+}

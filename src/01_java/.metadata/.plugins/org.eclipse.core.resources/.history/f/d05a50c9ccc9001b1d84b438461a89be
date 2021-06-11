@@ -1,0 +1,8 @@
+package com.lec.ex0_conn;
+
+public class ConnMySQL {
+	public static void main(String[] args) {
+		String driver = "com.mysql.cj.jdbc.Driver";	// mysql 8.0
+		String url = "jdbc:mysql://localhost:3306/kimdb";
+	}
+}

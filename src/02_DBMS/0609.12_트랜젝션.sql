@@ -55,3 +55,6 @@ ROLLBACK TO C2;
 
 SELECT *
     FROM DEPT01;
+    
+    
+COMMIT;

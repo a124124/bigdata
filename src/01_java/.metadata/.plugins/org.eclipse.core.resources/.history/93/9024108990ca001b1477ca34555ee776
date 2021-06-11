@@ -1,0 +1,19 @@
+package com.lec.ex6_preparedStatement;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Scanner;
+
+// 부서명 입력받아 해당 부서명의 사번, 이름, 급여, 상사이름 출력
+
+public class SelectWhereDname {
+	public static void main(String[] args) {
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+		Scanner sc = new Scanner(System.in);
+		Connection			 conn	 = null;
+		PreparedStatement	 pstmt	 = null;
+		ResultSet			 rs		 = null;
+	}
+}

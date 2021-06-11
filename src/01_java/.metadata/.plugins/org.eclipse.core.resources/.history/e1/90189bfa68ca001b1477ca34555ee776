@@ -1,0 +1,11 @@
+package com.lec.ex3_insert;
+
+// 1 부서번호 받아 해당 부서 번호가 있는지 조회
+// 2-1 부서가 없을 경우 - 부서명과 위치를 받아 insert
+// 2-2 부서가 있을경우 - 이미 있다 메세지
+
+public class InsertDept2 {
+	public static void main(String[] args) {
+		
+	}
+}

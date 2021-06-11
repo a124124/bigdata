@@ -1,0 +1,8 @@
+package com.lec.ex0_conn;
+
+public class Ex01_ConnOracle {
+	public static void main(String[] args) {
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521xe";
+	}
+}

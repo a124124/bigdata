@@ -1,0 +1,12 @@
+package com.lec.ex5_deleteDept;
+
+import java.util.Scanner;
+
+public class DeleteDept {
+	public static void main(String[] args) {
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("삭제할 부서 번호는?");
+	}
+}

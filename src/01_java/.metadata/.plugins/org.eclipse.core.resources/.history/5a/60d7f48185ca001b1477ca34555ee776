@@ -1,0 +1,20 @@
+package com.lec.ex6_preparedStatement;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.Scanner;
+
+// 부서 번호를 받아 삭제
+
+public class InsertDept {
+	public static void main(String[] args) {
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+		Scanner sc = new Scanner(System.in);
+		int deptno = sc.nextInt();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = "DELETE FROM DEPT WHERE DEPTNO = ?";
+		System.out.println("삭제할 부서번호");
+	}
+}

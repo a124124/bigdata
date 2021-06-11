@@ -1,0 +1,16 @@
+package com.lec.ex6_preparedStatement;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.Scanner;
+
+public class UpdateDept {
+	public static void main(String[] args) {
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+		Scanner sc = new Scanner(System.in);
+		Connection			 conn	 = null;
+		PreparedStatement	 pstmt	 = null;
+		String sql = "";
+	}
+}

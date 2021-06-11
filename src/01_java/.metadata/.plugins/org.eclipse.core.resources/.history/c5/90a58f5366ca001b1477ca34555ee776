@@ -1,0 +1,18 @@
+package com.lec.ex3_insert;
+
+import java.sql.Connection;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class InsertDept {
+	public static void main(String[] args) {
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+		Connection conn = null;
+		Statement stmt = null;
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("입력할 부서 번호");
+		int deptno = scanner.nextInt();
+		String sql = "INSERT INTO DEPT VALUES(50, 'IT', 'MAPO')";
+	}
+}

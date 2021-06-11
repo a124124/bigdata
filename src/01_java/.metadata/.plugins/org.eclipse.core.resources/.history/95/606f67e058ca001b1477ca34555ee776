@@ -1,0 +1,18 @@
+package com.lec.ex2_selectWhere;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class SelectWhereDeptno {
+	public static void main(String[] args) {
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+		Connection conn = null;
+		Statement stmt = null;	
+		ResultSet rs = null;	
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("원하는 부서번호");
+	}
+}

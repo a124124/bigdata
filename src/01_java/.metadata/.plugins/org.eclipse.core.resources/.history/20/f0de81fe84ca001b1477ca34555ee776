@@ -1,0 +1,14 @@
+package com.lec.ex6_preparedStatement;
+
+import java.util.Scanner;
+
+// 부서 번호를 받아 삭제
+
+public class InsertDept {
+	public static void main(String[] args) {
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+		Scanner sc = new Scanner(System.in);
+		
+	}
+}

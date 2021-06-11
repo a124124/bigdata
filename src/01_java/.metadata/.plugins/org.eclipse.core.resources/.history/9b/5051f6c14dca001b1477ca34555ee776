@@ -1,0 +1,13 @@
+package com.lec.ex1_selectAll;
+
+import java.sql.Connection;
+import java.sql.Statement;
+
+public class SelectAllOracle {
+	public static void main(String[] args) {
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+		Connection conn = null;	// DB연결 변수
+		Statement
+	}
+}

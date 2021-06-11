@@ -1,4 +1,4 @@
-    --[X] VIEW, INLINE VIEW, TOP-N 구문
+               --[X] VIEW, INLINE VIEW, TOP-N 구문
     
     
     --1. VIEW : 가상의 테이블

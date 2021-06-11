@@ -1,0 +1,5 @@
+package com.lec.ex0_conn;
+
+public class ConnMySQL {
+
+}

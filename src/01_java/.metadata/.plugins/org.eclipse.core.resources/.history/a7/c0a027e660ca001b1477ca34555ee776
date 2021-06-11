@@ -1,0 +1,24 @@
+package com.lec.ex2_selectWhere;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class SelectWhereDnameEmp {
+	public static void main(String[] args) {
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+		Connection conn = null;	// DB연결 변수
+		Statement stmt = null;	// SQL 문 전송 객체 변수
+		ResultSet rs = null;	// SELECT 문 결과 받는 객체 변수
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("부서 이름");
+		String dname = scanner.next().toUpperCase();
+		String sql1 = String.format("SELECT * FROM DEPT WHERE DNAME = '%s'", dname);
+		String sql2 = String.format("SELECT W.EMPNO, W.ENAME, W.SAL, M.ENAME MANAGER" + 
+				"    FROM EMP W, EMP M, DEPT D" + 
+				"    WHERE W.MGR = M.EMPNO AND W.DEPTNO = D.DEPTNO AND DNAME = '%s'", dname);
+		
+	}
+}

@@ -1,0 +1,9 @@
+package com.lec.ex6_preparedStatement;
+
+// 부서명 입력받아 해당 부서명의 사번, 이름, 급여, 상사이름 출력
+
+public class SelectWhereDname {
+	public static void main(String[] args) {
+		
+	}
+}
