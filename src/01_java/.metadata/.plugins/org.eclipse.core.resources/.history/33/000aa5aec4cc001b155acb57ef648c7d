@@ -1,0 +1,32 @@
+package com.lec.ex01_person;
+
+// 입력, 직업별 검색, 전체검색, 콤보박스에 들어갈 직업명 리스트
+
+public class PersonDAO {
+	String driver = "oracle.jdbc.driver.OracleDriver";
+	String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+	public static final int SUCCESS = 1;
+	public static final int FAIL = 0;
+	private static PersonDAO INSTANCE;
+	private PersonDAO() {
+		try {
+			Class.forName(driver);
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+	}
+	public static PersonDAO getInstance() {
+		if(INSTANCE == null) {
+			INSTANCE = new PersonDAO();
+			
+		}
+		return INSTANCE;
+	}
+	
+	// 1. 입력
+	public int insertPerson(PersonDTO dto) {
+		
+	}
+}

@@ -1,0 +1,30 @@
+package com.lec.ex01_person;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class PersonManager {
+	public static void main(String[] args) {
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+		Scanner sc = new Scanner(System.in);
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		String fn, sql;
+		// 1´Ü°è dowhile ¹®
+		
+		try {
+			Class.forName(driver);
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+		
+	}
+}

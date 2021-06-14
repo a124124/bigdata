@@ -1,0 +1,13 @@
+package com.lec.ex01_person;
+
+public class PersonDAOTest {
+	public static void main(String[] args) {
+		PersonDAO dao = PersonDAO.getInstance();
+		//1. 입력
+		PersonDTO newPerson = new PersonDTO("박홍", "배우", 70, 56, 97);
+		int result = dao.insertPerson(newPerson);
+		System.out.println(result == PersonDAO.SUCCESS? "성공" : "실패");
+		
+		
+	}
+}

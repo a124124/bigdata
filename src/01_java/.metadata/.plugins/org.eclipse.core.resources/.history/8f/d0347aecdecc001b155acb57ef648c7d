@@ -1,0 +1,58 @@
+package com.lec.ex01_person;
+
+import java.awt.Container;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Vector;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class PersonManagerGUI extends JFrame implements ActionListener{
+	// 화면에 추가될 컴포넌트
+	
+	private Container contenPane;
+	private JPanel jpup, jpbtn;
+	private JTextField txtName, txtKor, txtEng, txtMat;
+	private Vector<String> jnames;
+	private JComboBox<String> comJob;
+	private JButton btnInput, btnSearch, btnOutput, btnExit;
+	private JTextArea txtPool;
+	private JScrollPane scrollPane;
+	
+	
+	//db 연동을 위한 변수
+	private PersonDAO dao;
+	private ArrayList<PersonDTO> person;
+	public PersonManagerGUI(String title) {
+		super(title);
+		dao = PersonDAO.getInstance();
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		contenPane = getContentPane(); // 전체화면 get
+		contenPane.setLayout(new FlowLayout()); //  전체화면의 레이아웃 세팅
+		jpup = new JPanel(new GridLayout(5, 2));
+		jpbtn = new JPanel(new FlowLayout());
+		txtName = new JTextField(20);
+		
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	
+	
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

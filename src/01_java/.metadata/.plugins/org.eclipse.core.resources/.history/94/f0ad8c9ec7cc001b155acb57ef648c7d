@@ -1,0 +1,8 @@
+package com.lec.ex01_person;
+
+public class PersonDAOTest {
+	public static void main(String[] args) {
+		PersonDAO dao = PersonDAO.getInstance();
+		
+	}
+}
