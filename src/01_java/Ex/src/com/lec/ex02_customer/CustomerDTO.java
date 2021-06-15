@@ -47,7 +47,7 @@ public class CustomerDTO {
 		return point;
 	}
 
-	public void setPoint(String point) {
+	public void setPoint(int point) {
 		this.point = point;
 	}
 

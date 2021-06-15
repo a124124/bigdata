@@ -1,0 +1,27 @@
+package com.lec.ex02_customer;
+
+import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class CustomerMng extends JFrame implements ActionListener {
+
+	private Container contanPane;
+	private JPanel jpup, jpdown;
+	private JTextField txtPhone, txtName, txtPoint;
+	private JButton btnInput, btnSearch, btnOutput, btnExit;
+	
+	
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

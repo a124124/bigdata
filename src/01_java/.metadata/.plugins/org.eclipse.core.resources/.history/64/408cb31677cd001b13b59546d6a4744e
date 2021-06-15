@@ -1,0 +1,60 @@
+package com.lec.ex02_customer;
+
+import java.awt.Container;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class CustomerMng extends JFrame implements ActionListener {
+
+	private Container contanPane;
+	private JPanel jpup, jpdown;
+	private JTextField txtPhone, txtName, txtPoint;
+	private JButton btnInput, btnSearch, btnOutput, btnExit;
+	private JTextArea jta;
+	private JScrollPane scr;
+	
+	private CustomerDAO dao;
+	private ArrayList<CustomerDTO> dto;
+
+	
+	public CustomerMng(String title) {
+		super(title);
+		dao = CustomerDAO.getInstance();
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		contanPane = getContentPane();
+		contanPane.setLayout(new GridLayout(3, 2));
+		jpup = new JPanel();
+		jpup.setLayout(new FlowLayout());
+		jpdown = new JPanel();
+		jpdown.setLayout(new FlowLayout());
+		txtPhone = new JTextField(15);
+		txtName = new JTextField(15);
+		txtPoint = new JTextField("1000", 15);
+		jta = new JTextArea(15, 30);
+		scr = new JScrollPane(jta);
+		btnInput = new JButton("가입");
+		btnSearch = new JButton("번호");
+		btnOutput = new JButton("출력");
+		btnExit = new JButton("종료");
+		
+		
+		
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

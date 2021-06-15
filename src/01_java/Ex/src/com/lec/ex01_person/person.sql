@@ -58,6 +58,7 @@ INSERT INTO PERSON
                                                 FROM JOB
                                                 WHERE JNAME = '배우'), 80, 90, 80);                                            
 
+COMMIT;
 -- 2번 쿼리(해당 직업 명의 등수,  이름(X번),직업,  국어(kor), 영어(eng), 수학(mat), 총점 정렬
 
 SELECT NAME||'('||NO||'번)' NAME, JNAME, KOR, ENG, MAT, KOR+ENG+MAT SUM
@@ -88,3 +89,11 @@ SELECT ROWNUM RANK, S.*
             FROM PERSON P, JOB J
             WHERE P.JNO = J.JNO
             ORDER BY SUM DESC) S;
+            
+            
+            
+-- 4. 직업명 리스트
+
+SELECT JNAME 
+    FROM JOB
+    ORDER BY JNO;

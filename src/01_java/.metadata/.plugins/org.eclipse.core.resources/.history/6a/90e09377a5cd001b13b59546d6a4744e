@@ -1,0 +1,55 @@
+package com.lect.exam;
+
+import java.awt.Container;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Vector;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class StudentGUI extends JFrame implements ActionListener {
+	private Container contanpane;
+	private JPanel jpup, jpbtn;
+	private JTextField txtSNo, txtSName, txtScore;
+	private Vector<String> mNames;
+	private JComboBox<String> comMnames;
+	private JButton btnSNoSearch, btnSNameSearch, btnMnameSearch,
+			btnInput, btnUpdate, btnStudentOut, btnExpelOut, btnExpel, btnExit;
+	private JTextArea txtPool;
+	private JScrollPane scr;
+	
+	
+	private StudentDAO dao;
+	private ArrayList<StudentDTO> student;
+	
+	public StudentGUI(String title) {
+		// TODO Auto-generated constructor stub
+		super(title);
+		dao = StudentDAO.getInstance();
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		contanpane = getContentPane();
+		contanpane.setLayout(new FlowLayout());
+		jpup = new JPanel(new GridLayout(4, 3));
+		txtSNo = new JTextField(10);
+		txtSName = new JTextField(10);
+		comMnames = new JComboBox<String>(mNames);
+		txtScore = new JTextField(10);
+	}
+	public static void main(String[] args) {
+		new StudentGUI("학사관리");
+		
+	}
+	
+	
+	
+	
+
+}

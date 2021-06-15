@@ -1,0 +1,26 @@
+package com.lect.exam;
+
+public class StudentDAO {
+	String driver = "oracle.jdbc.driver.OracleDriver";
+	String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+	public static final int SUCCESS = 1;
+	public static final int FAIL    = 0;
+	private static StudentDAO INSTANCE;
+	public static StudentDAO getInstance() {
+		if(INSTANCE == null) {
+			INSTANCE = new StudentDAO();
+			
+		}
+		return INSTANCE;
+	}
+	private StudentDAO() {
+		try {
+			Class.forName(driver);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+	}
+//////////////////////////////////////////////////////////////////////////
+	//1. ют╥б
+}

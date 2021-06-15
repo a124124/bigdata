@@ -35,6 +35,11 @@ public class PersonDTO {
 		this.mat = mat;
 		this.sum = sum;
 	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return rank + "µî\t" + name + "\t" + jname + "\t" + kor + "\t" + eng + "\t" + mat + "\t" + sum;
+	}
 
 	public int getRank() {
 		return rank;
@@ -56,6 +61,34 @@ public class PersonDTO {
 		return eng;
 	}
 
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setJname(String jname) {
+		this.jname = jname;
+	}
+
+	public void setKor(int kor) {
+		this.kor = kor;
+	}
+
+	public void setEng(int eng) {
+		this.eng = eng;
+	}
+
+	public void setMat(int mat) {
+		this.mat = mat;
+	}
+
+	public void setSum(int sum) {
+		this.sum = sum;
+	}
+
 	public int getMat() {
 		return mat;
 	}
@@ -63,10 +96,6 @@ public class PersonDTO {
 	public int getSum() {
 		return sum;
 	}
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return rank + "µî\t" + name + "\t" + jname + "\t" + kor + "\t" + eng + "\t" + mat + "\t" + sum;
-	}
+	
 	
 }

@@ -1,0 +1,12 @@
+package com.lect.exam;
+
+public class StudentDTO {
+	private String sNo;
+	private String sName;
+	private int score;
+	private boolean sExpel;
+	private int mNo;
+	private String mName;
+	
+	
+}

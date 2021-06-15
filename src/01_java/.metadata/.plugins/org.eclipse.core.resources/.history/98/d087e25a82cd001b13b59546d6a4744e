@@ -1,0 +1,59 @@
+package com.lect.exam;
+
+public class StudentDTO {
+	private String sNo;
+	private String sName;
+	private int score;
+	private int sExpel;
+	private int mNo;
+	private String mName;
+	
+	
+	public StudentDTO(String sNo, String sName, int score, int sExpel) {
+		super();
+		this.sNo = sNo;
+		this.sName = sName;
+		this.score = score;
+		this.sExpel = sExpel;
+	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return sNo + "\t" + sName + "\t" + mName + "\t" + score;
+	}
+
+
+	public String getsNo() {
+		return sNo;
+	}
+
+
+	public String getsName() {
+		return sName;
+	}
+
+
+	public int getScore() {
+		return score;
+	}
+
+
+	public int issExpel() {
+		return sExpel;
+	}
+
+
+	public int getmNo() {
+		return mNo;
+	}
+
+
+	public String getmName() {
+		return mName;
+	}
+	
+	
+	
+	
+	
+}

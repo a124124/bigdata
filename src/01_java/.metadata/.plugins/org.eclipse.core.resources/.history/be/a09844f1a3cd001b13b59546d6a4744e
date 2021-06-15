@@ -1,0 +1,9 @@
+package com.lect.exam;
+
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+
+public class StudentGUI extends JFrame implements ActionListener {
+
+}

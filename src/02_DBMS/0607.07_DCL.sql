@@ -279,10 +279,13 @@ COMMIT;
 UPDATE MY_DATA
     SET SALARY = 15000
     WHERE SALARY <= 15000;
-    
+
+SELECT *
+    FROM MY_DATA;
     --8.
 
 DROP TABLE MY_DATA;
+
 
 
 -- 제약조건
