@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="ex1.css" rel="stylesheet" type="text/css" />
+    <script>
+        function chk() {
+            if (form.name.value.length < 2) {
+                alert("이름은 2글자 이상");
+                form.name.focus();
+                return false;
+            } else if (form.id.value.length < 4) {
+                alert("ID는 4글자 이상")
+                form.id.focus();
+                return false;
+            } else if (form.pw.value.length < 1) {
+                alert("PW는 1글자 이상")
+                form.pw.focus();
+                return false;
+            } else if (form.pw.value != form.pw1.value) {
+                alert('비밀번호와 다릅니다');
+                form.pw1.value = '';
+                form.pw1.focus();
+                return false;
+            }
+            return true;
+        }     
+
+    </script>
+    
+</head>
+<body>
+    <form action="" name="form" onsubmit="return chk()">
+        <div id="header">
+            <h1>회원가입</h1>
+        </div>
+        <div id="content">
+            <table>
+
+                <tr>
+                    <th>이&nbsp;&nbsp;&nbsp;&nbsp;름<b>*</b></th>
+                    <td><input type="text" name="name" autofocus="autofocus" placeholder="이름은 2글자 이상" /></td>
+                </tr>
+                <tr>
+                    <th>아 이 디<b>*</b></th>
+                    <td><input type="text" name="id" placeholder="ID는 4글자 이상" /></td>
+                </tr>
+                <tr>
+                    <th>비밀번호<b>*</b></th>
+                    <td><input type="password" name="pw"></td>
+                </tr>
+                <tr>
+                    <th>비밀번호 확인<b>*</b></th>
+                    <td><input type="password" name="pw1"></td>
+                </tr>
+                <tr>
+                    <th>전화번호</th>
+                    <td><input type="text" name="tel" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}" title="전화번호 형식 지켜주세요" /></td>
+                </tr>
+                <tr>
+                    <th>이 메 일</th>
+                    <td><input type="text" name="email" pattern="[A-z0-9가-힣]*@[A-z]+(\.[A-z]+){1,2}" title="이메일 형식 지켜주세요" /></td>
+                </tr>
+                <tr>
+                    <th>출신 지역</th>
+                    <td>
+                        <select name="city">
+                            <option value="s">서울</option>
+                            <option value="k">경기</option>
+                            <option value="i">인천</option>
+                            <option value="etc">그외</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>결혼 유무</th>
+                    <td>
+                        <input type="radio" name="marry" value="s" checked="checked" />미혼
+                        <input type="radio" name="marry" value="m" />기혼
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>자식 유무</th>
+                    <td>
+                        <input type="radio" name="kid" value="n" checked="checked" />없음
+                        <input type="radio" name="kid" value="y" />있음
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>자기소개</th>
+                    <td><textarea name="is" rows="5" cols="20"></textarea></td>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <input type="submit" value="입력" />
+                        <input type="reset" value="초기화" />
+
+                    </th>
+                </tr>
+
+            </table>
+        </div>
+        <div id="footer"> 서울시 마포구</div>
+    </form>
+</body>
+</html>

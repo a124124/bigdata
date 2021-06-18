@@ -1,0 +1,20 @@
+﻿
+        * {
+            margin: 0px auto;
+           
+        }
+        table {
+            margin: 20px auto;
+            border: 1px solid gray;
+        }
+        b{
+            color:red;
+        }
+        #header {
+            margin: 10px auto;
+            text-align: center;
+        }
+        #footer {
+            margin: 10px auto;
+            text-align: center;
+        }
