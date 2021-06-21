@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #wrap {
+            width:500px;
+            margin:0 auto;
+            border:1px solid gray;
+        }
+        #header {
+            height:50px;
+            line-height:50px;
+            text-align:center;
+            background-color:gray;
+        }
+        #contain {
+            height:200px;
+            position:relative; /*자식단에 position을 잡으면 부모단도 잡아야함.*/
+
+        }
+        #contain #content1 {
+            height:180px;
+            width:320px;
+            background-color:red;
+            position:absolute;
+            top:10px; left:10px;
+            z-index:10;
+        }
+        #contain #content2 {
+            height:180px;
+            width:200px;
+            background-color:yellow;
+            position:absolute;
+            top:15px;
+            right:10px;
+            z-index:50;
+
+        }
+        #footer {
+            height:50px; line-height:50px;
+            background-color:gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">header</div>
+        <div id="contain">
+            <div id="content1">content1(왼쪽)</div>
+            <div id="content2">content2(오른쪽)</div>
+        </div>
+        <div id="footer">footer</div>
+    </div>
+</body>
+</html>

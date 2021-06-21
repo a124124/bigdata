@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #wrap{width:800px; margin: 0 auto;
+
+        }
+        #wrap #header{
+            text-align:center;
+            border-bottom: 1px solid #cccccc;
+            font-size:30px;
+            font-weight:bold;
+            padding:20px;
+
+        }
+            #wrap #content a { /*밑줄 선택자*/
+                text-decoration: none;
+                color: black;
+             
+            }
+        #wrap #content a:after { /*링크 선택자*/
+            content: ' - ' attr(href);
+          
+            
+        }
+        #wrap #content ul li:not(.web) a{ /*부정 선택자 : li 태그중 .web을 제외한 li*/
+            background-color:yellow;
+        }
+        #wrap #footer ul{
+            border-top:1px solid #cccccc;
+            overflow:hidden;
+        }
+        #wrap #footer ul li{
+            float:left;
+            list-style:none;
+            padding:10px;
+            margin: 5px 10px;
+        }
+        #wrap #footer ul li:first-child{
+            padding-top:25px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1>Weekly connect website</h1>
+        </div>
+        <div id="content">
+            <ul>
+                <li>
+                    <a href="http://www.naver.com" target="_blank">네이버</a>
+                </li>
+                <li>
+                    <a href="http://www.google.com" target="_blank">구글</a>
+                </li>
+                <li>
+                    <a href="http://www.daum.net" target="_blank">다음</a>
+                </li>
+                <li>
+                    <a href="http://www.nate.com" target="_blank">네이트</a>
+                </li>
+                <li class="web">
+                    <a href="http://www.yahoo.com" target="_blank">야후</a>
+                </li>
+            </ul>
+            <div id="footer">
+                <ul>
+                    <li>
+                        <img src="book.png" alt="회사로고"/>
+                        
+                    </li>
+                    <li>
+                        <img src="11.jpg" alt="주소" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
