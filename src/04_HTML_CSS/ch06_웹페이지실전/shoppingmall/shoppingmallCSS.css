@@ -1,0 +1,177 @@
+﻿*{margin:0 ; padding:0;}
+
+.gnb {
+   
+    background-color: black;    
+    
+}
+.gnb ul{
+    overflow: hidden;
+    width:1000px;
+    margin:0 auto;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+    
+}
+.gnb ul li{
+    
+    list-style:none;
+    float:left;   
+    
+}
+.gnb ul li a{
+    margin:0 20px;
+    text-decoration:none;
+    color:white;
+    display:block;
+    text-align:center;
+    
+    
+}
+.logo  {
+    width:1000px;
+    margin:100px auto;
+    text-align:center;
+}
+
+.hitmenu ul {
+    width: 1000px;
+    margin: 5px auto;
+    
+    overflow:hidden;
+    line-height:30px;
+    
+    
+    
+    
+}
+.hitmenu ul li {
+    list-style:none;
+    float:right;
+    border:1px solid gray;
+    margin:0 1px;
+    font-size:20px;
+    text-align:center;
+    
+}
+.hitmenu ul li a{
+    margin:0 10px;
+    text-decoration:none;
+    display: block;
+    padding:0 10px;
+    
+}
+#hl1 {
+    border-radius: 5px 0 0 5px;
+    
+}
+#hl4{
+    border-radius:0 5px 5px 0;
+}
+.lnb {
+    
+    border-top:1px dashed black;
+    border-bottom:1px dashed black;
+    height:30px;
+}
+.lnb ul{
+    width:1000px;
+    margin:0 auto;
+   overflow: hidden;
+   
+   height:30px;
+    line-height:30px;
+}
+.lnb ul li{
+    
+    list-style:none;
+    float:left;   
+   
+}
+.lnb ul li a{
+   
+    margin:0 30px;
+    text-decoration:none;
+   
+    display:block;
+    text-align:center;
+    
+}
+#content .section1 {
+    width:1000px;
+    margin:0 auto;
+    overflow:hidden;
+}
+#content .section1 .slide_banner{
+    float:left;
+    width:698px;
+    height:398px;
+   
+    margin-bottom:10px;
+}
+#content .section1 .side_banner{
+    float:left;
+    width:298px;
+    height:398px;
+    
+    margin-bottom:10px;
+}
+#content .section2{
+     width:1000px;
+    margin:0 auto;
+    overflow:hidden;
+}
+#content .section2 .hit_product{
+    float:left;
+    width:240px;
+    height:400px;
+    margin:5px 3.5px;
+    
+    
+}
+#content .section2 .md_product{
+    float:left;
+    width:240px;
+    height:400px;
+    margin:5px 3.5px;
+    
+}
+footer {
+    overflow: hidden;
+    width:1000px;
+    margin:0 auto;
+   
+}
+footer .office_logo {
+    float:left;
+    line-height:100px;
+    width:198px;
+    height:100px;
+    
+    text-align:center;
+}
+footer .office_address {
+    float:left;
+    width:498px;
+    height:100px;
+    
+}
+footer .shopping_info{
+    float:left;
+    width:298px;
+    height:100px;
+   
+}
+footer .copyright{
+    clear:both;
+    width:1000px;
+    margin:0 auto;
+    height:30px;
+    background-color:black;
+    
+}
+.copyright p{
+    color:white;
+    text-align:center;
+}

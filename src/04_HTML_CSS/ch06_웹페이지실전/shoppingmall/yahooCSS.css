@@ -1,0 +1,31 @@
+﻿* {
+    margin:0;
+    padding:0;
+}
+header #header_nav {
+    background-color:#2d1152;
+}
+header #header_nav .gnb ul{
+    overflow: hidden;   
+    height:30px;
+    line-height:30px;
+}
+header #header_nav .gnb ul li{
+   
+    list-style:none;
+    float:left;       
+}
+
+header #header_nav .survivalFootball a{
+    float:right;
+    text-decoration:none;
+    color:red;
+}
+.gnb ul li a {
+    margin: 0 10px;
+    text-decoration: none;
+    color:white;
+    display: block;
+    text-align: center;
+}
+
