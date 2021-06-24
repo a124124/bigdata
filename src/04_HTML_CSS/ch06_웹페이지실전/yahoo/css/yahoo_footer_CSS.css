@@ -1,0 +1,41 @@
+﻿footer {
+    overflow: hidden;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+    footer .footer_logo {
+        float: left;
+        line-height: 100px;
+        width: 198px;
+        height: 100px;
+        text-align: center;
+        border: 1px dashed blue;
+    }
+
+    footer .footer_address {
+        float: left;
+        width: 498px;
+        height: 100px;
+        border: 1px dashed blue;
+    }
+
+    footer .footer_info {
+        float: left;
+        width: 298px;
+        height: 100px;
+        border: 1px dashed blue;
+    }
+
+    footer .copyright {
+        clear: both;
+        width: 1000px;
+        margin: 0 auto;
+        height: 30px;
+        background-color: #2d1152;
+    }
+
+        footer .copyright p {
+            color: white;
+            text-align: center;
+        }

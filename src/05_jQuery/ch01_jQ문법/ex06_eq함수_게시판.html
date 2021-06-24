@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+        tr:hover {
+            background-color: orange;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('tr').click(function () {
+                var no = $(this).children(0).eq(0).text();
+                //isNaN(Number(no)) 매개변수 안의 값이 NaN인지 여부를 return 한다.
+                if (isNaN(Number(no))) {
+                    // 맨위 타이틀을 선택했을 경우
+
+                } else {
+                    // 글을 선택했을 경우
+                    location = '4_selector.html?no=' + no;
+                }
+                
+            });
+        });
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>조회수</th>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>4제목</td>
+            <td>길동</td>
+            <td>55</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>3제목</td>
+            <td>주동</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>제2목</td>
+            <td>사동</td>
+            <td>55</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>제목1</td>
+            <td>동길</td>
+            <td>554</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $('td').click(function () {
+                $('td').removeClass('tdRed');
+                $(this).addClass('tdRed'); // 클릭한 tdRed 클래스 추가
+            });
+        });
+    </script>
+    <style>
+        table td {
+            width: 100px;
+            height: 100px;
+            background-color: #AAFFAA;
+        }
+
+        .tdRed {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>

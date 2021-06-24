@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('*').css('margin', '20px').css('color', 'blue');
+            //$('*').css('color', 'blue');
+            //$('*').css('margin', '20px');
+            $('p').click(function () {
+                $(this).hide();
+            });
+            $('button#hidep1').click(function () {
+                $('#p3').hide();
+            });
+            $('#hideptag').click(function () {
+                $('p').hide();
+            });
+            $('#showptag').click(function () {
+                $('p').show();
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1> 이곳은 heading</h1>
+    <p>1 이곳을 클릭하면 숨겨짐</p>
+    <p>2 여기도 숨겨짐</p>
+    <p id="p3">3 숨겨짐</p>
+    <button id="hidep1"> 3 숨겨</button>
+    <button id="hideptag"> 123 다 숨겨</button>
+    <button id="showptag"> 123 등장</button>
+</body>
+</html>
