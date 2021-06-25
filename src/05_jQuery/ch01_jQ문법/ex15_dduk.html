@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            ddukIdx = parseInt(Math.random() * 9);
+            $('.result').text(ddukIdx);            
+            $('td').click(function () {                
+                $('td').removeClass('tdRed');
+                var idx = $(this).attr('id');                
+                if (idx == ddukIdx) {
+                    $(this).css('background', 'url(img/dduk.jpg)');
+                    $(this).css('background-size', '100%');
+                    $('p').text('축하');
+                    $('td').off();
+                } else {
+                    $(this).addClass('tdRed');
+                    $('p').text('다시고르세요');
+                    
+                }
+            });
+            
+           
+        });
+    </script>
+    <style>
+       
+        td {
+            width:200px;
+            height:200px;
+            background-color:springgreen;
+            text-align:center;
+          
+        }
+        .tdRed{
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td id="0"></td>
+            <td id="1"></td>
+            <td id="2"></td>
+        </tr>
+        <tr>
+            <td id="3"></td>
+            <td id="4"></td>
+            <td id="5"></td>
+        </tr>
+        <tr>
+            <td id="6"></td>
+            <td id="7"></td>
+            <td id="8"></td>
+        </tr>
+        
+    </table>
+    <p class="result"></p>
+    
+</body>
+</html>

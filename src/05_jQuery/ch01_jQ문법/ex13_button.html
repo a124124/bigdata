@@ -6,8 +6,15 @@
     <title></title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(function () {
-            
+        $(document).ready(function () {
+            $('img').mousedown(function () {
+                $(this).attr('src', 'img/but2.gif');
+                $(this).attr('alt', 'mousedown');
+            });
+            $('img').mouseup(function () {
+                $(this).attr('src', 'img/but1.gif');
+                $(this).attr('alt', 'mouseup');
+            });
         });
     </script>
 </head>
