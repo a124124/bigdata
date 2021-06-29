@@ -108,3 +108,177 @@ rm(data) #data 변수를 삭제
 iris
 
 data(iris, package="datasets")
+
+
+# 3. 변수 할당 <-, <<-  <- 지역변수,  <<- 전역변수
+
+result <- 0
+
+result <- 10
+
+class(result)
+
+add <- function(a,b) {
+  result <<- a + b
+  return(result)
+}
+
+add(10,20)
+
+print(result) #전역변수 값 수정됨
+
+ 
+
+# 변수 목록 조회
+
+.a <- 10   # 히든 변수
+a.10 <- 10
+abc <- 10
+
+x <- 10
+
+
+y <- 10
+
+(z <- x+y)
+
+ls()
+?ls
+
+ls(all.names = TRUE)
+ls.str()
+
+
+# 4. 출력
+
+result
+print(result)
+
+(a<-10)
+
+msg <- "hello, r"
+msg <- "hello, r\nhello,python"
+print(msg)
+
+# (2) cat   여러 함수를 묶어서 출력, 행렬이나 리스트 등 복합데이터 구조는 출력 못함
+
+cat(msg)
+
+cat("메세지는", msg)
+
+
+cat("result =",result)
+
+fibo <- c(0,1,1,2,3,5,8,13,21)  # 벡터(동일자료형의 집합)
+cat('피보나치 수열 몇개 :', fibo, '\n')
+
+
+# (3) paste
+
+paste("result 값은", result)
+# print("result 값은", result)
+
+paste("hello","world")
+
+paste0("hello","world")
+
+paste("hello", "world", sep=" ,")
+
+?paste
+
+temp <- paste(c(1,2,3), c("하나","둘","셋"), sep="은 ")
+temp
+
+paste(c(1,2,3), c("하나","둘","셋"), sep="은 ", collapse=";")
+
+
+# (4) paste0
+
+month.abb #월이름 약자
+month.name # 월이름
+c(1,2,3)
+1:3
+c(1,2,3,4,5,6,7,8,9,10)
+1:10
+nth <- paste(1:12,c('st','nd',rep('th',10)),sep="")
+
+paste(month.name, nth, sep=":")
+paste(month.name, nth, sep="은 ")
+paste(month.name, nth, sep="은 ", collapse=" / ")
+
+
+
+# 5. 변수 삭제
+
+ls(all.names= TRUE)
+
+
+# 특정 변수만 삭제
+
+rm(nth)
+nth
+
+# 일반 변수 목록
+
+rm(list=ls())
+
+
+# 히든 변수까지 다 삭제
+
+ls(all.names = T)
+rm(list=ls(all.names = TRUE))
+
+ls(all.names = TRUE)
+
+
+a <- 10
+.a <- 10
+
+
+
+
+### 문1. kor 변수에 "한국",일본","미국"
+###      eng 변수에 "korea","japan","USA"
+###      출력: 한국:korea, 일본:japan, 미국:USA
+
+kor <- c(한국,일본,미국)
+eng <- c("korea","japan","usa")
+msg <- paste(kor,eng,sep=":")
+
+### 문2. MASS::Cars93 데이터를 출력
+
+library()
+library("MASS")
+MASS::Cars93
+.libPaths()
+Cars93
+
+require("MASS")
+require(MASS)
+
+edit(Cars93)
+Cars93
+head(Cars93)
+head(Cars93, 3)
+tail(Cars93)
+tail(Cars93, 3)
+
+# 패키지 메모리 언로드
+
+detach("package:MASS", unload = TRUE)
+
+
+
+
+### 문3. 도움말
+
+?mean
+hep(mean)
+?iris                 # 데이터 도움말
+
+library(help="MASS")  # 라이브러리(패키지) 도움말
+
+
+
+
+
