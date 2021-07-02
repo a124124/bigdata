@@ -1043,19 +1043,7 @@ today
 # setosa종 만 추출 => setosa
 #4) 추출한 부분 데이터셋을 다시 결합해 봅니다.
 #2. setOsa종의 꽃 받침(Sepal)의 폭과 길이 부분 데이터 셋을 추출하세요.
-#3. 작업내용에 따른 급여가 차등 지급됩니다.(행렬 문제)
-#A작업은 시급 12000원, B작업은 시급 26000원, C작업은 시급 18000원 입니다.#
-#두 사람이 각 작업을 수행하는 데 있어서 실제 작업한 시간이 작업 내역에 따라 다릅니다. 갑
-#은 A작업을 5시간, B작업을 4시간, C작업을 9시간
-#그리고 을은 A작업을 7시간, B작업을 3시간, C작업을 2시간 작업 했습니다.
-#갑과 을의 급여를 계산하세요.
-#힌트 : 행렬 두 개, 작업당 급여를 저장하는 행렬, 근무자들이 근무한시간
-#행렬의 곱은 %*% 를이용한다.
-#계산한 갑과 을의 급여는 각각 326000원, 198000원 입니다
 
-
-#1. iris 데이터를 사용하여 data.frame의 특성을 살펴봅니다.
-#1) 행과 열에 대한 다양한 참조 방식을 사용하여 데이터를 조회합니다.
 
 
 iris
@@ -1064,8 +1052,74 @@ nrow(iris)
 ncol(iris)
 length(iris)
 head(iris,10)
+dim(iris)
+str(iris)
 
+virginica <- subset(iris,subset=(Species == 'virginica'), )
 
-
-virginica <- subset(iris,subset=(Species == 'verginica'), )
 virginica
+
+setosa <- subset(iris, subset = (Species == 'setosa'))
+
+setosa
+
+setosa[,1:2]
+
+
+
+
+#3. 작업내용에 따른 급여가 차등 지급됩니다.(행렬 문제)
+#A작업은 시급 12000원, B작업은 시급 26000원, C작업은 시급 18000원 입니다.#
+#두 사람이 각 작업을 수행하는 데 있어서 실제 작업한 시간이 작업 내역에 따라 다릅니다. 
+#갑은 A작업을 5시간, B작업을 4시간, C작업을 9시간
+#그리고 을은 A작업을 7시간, B작업을 3시간, C작업을 2시간 작업 했습니다.
+#갑과 을의 급여를 계산하세요.
+#힌트 : 행렬 두 개, 작업당 급여를 저장하는 행렬, 근무자들이 근무한시간
+#행렬의 곱은 %*% 를이용한다.
+#계산한 갑과 을의 급여는 각각 326000원, 198000원 입니다
+
+
+
+# (1) 데이터 프레임 생성
+
+student_id <- c('20211','20212','20213','20214')
+student_name <- c('Jin','Eric','Den','Kei')
+student_kor <- c(100,95,90,85)
+student_eng <- c(88,90,94,97)
+student_mat <- c(89,58,87,62)
+student_gender <- c('남','여','남','여')
+student_data <- data.frame(student_id, student_name, student_kor, student_eng, student_mat, student_gender)
+
+student_data
+
+edit(student_data)
+
+
+
+jjob <- c('A','B','C')
+ppay <- c(12000,26000,18000)
+
+ddata <- data.frame(jjob,ppay)
+
+ddata
+AA <- c('A','B','C')
+AAA <- c(5,4,9)
+AA <-data.frame(AA,AAA)
+AA
+
+BB <- c('A','B','C')
+BBB <- c(7,3,2)
+BB <-data.frame(BB,BBB)
+AA
+BB
+DATA <- ddata
+
+DATA %*% AA
+
+
+
+PAY <- c(12000,26000,18000)
+A <- c(5,4,9)
+B <- c(7,3,2)
+PAY %*% A
+PAY %*% B
