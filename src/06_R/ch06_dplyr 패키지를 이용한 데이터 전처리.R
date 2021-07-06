@@ -660,3 +660,206 @@ df
 df$gender <- as.factor(df$gender)
 dim(df)
 is.na(df) # 결측치 여부를 5행 4열 T/F 로 출력
+apply(is.na(df),2, sum)
+colSums(is.na(df))
+
+str(df)
+df
+
+na.omit(df) # 결측치가 하나라도 있는 열을 제외하고 출력. 
+
+library(dplyr)
+df %>% 
+  filter(!is.na(score)) %>% 
+  summarise(mean_score = mean(score))
+
+# 결측치를 대체
+
+
+x <- c(1,1,2,NA,2,3,2,1,2,3,4,5,6,2,3,350)
+mean(x)
+median(x)
+
+
+exam <- read.csv('inData/exam.csv', header=T)
+colSums(is.na(exam))
+exam[c(3,8,15),'math'] <- NA
+exam
+exam[1:2,'english'] <- NA
+
+
+colSums(is.na(exam)) # 결측치 확인
+
+
+## 결측치를 중앙값으로 대체 
+
+colSums(is.na(exam))
+median(exam$math, na.rm=T)
+
+exam$math <- ifelse(is.na(exam$math), median(exam$math, na.rm=T), exam$math)
+exam$english <- ifelse(is.na(exam$english), median(exam$english, na.rm=T), exam$english)
+
+
+colSums(is.na(exam)) # 결측치 대체 후 열별 결측치 확인
+table(is.na(exam))
+exam
+
+
+## 결측치를 중앙값으로 대체 2번째 방법
+
+exam[c(3,8,15),'math'] <- NA
+exam[1:2,'english'] <- NA
+exam[1,'science'] <- NA
+exam
+colSums(is.na(exam)) # 결측치 확인
+
+m <- apply(exam[,3:5],2,median, na.rm=T) # 결측치를 제외한 중앙값
+m
+
+# 결측치 처리 블록
+
+m['math']
+
+exam <- within(exam, {
+  math <- ifelse(is.na(math), m['math'], math)
+  english <- ifelse(is.na(english), m['english'], english)
+  science <- ifelse(is.na(science), m['science'], science)
+})
+
+colSums(is.na(exam)) # 결측치 확인
+
+#결측치
+
+exam[c(3,8,15),'math'] <- NA
+exam[1:2,'english'] <- NA
+exam[1,'science'] <- NA
+exam
+colSums(is.na(exam)) # 결측치 확인
+
+exam <- exam %>% 
+  mutate(
+    math = ifelse(is.na(math), m['math'], math),
+    english = ifelse(is.na(english), m['english'], english),
+    science = ifelse(is.na(science), m['science'], science)
+  ) #변수를 만드는 명령어
+
+colSums(is.na(exam)) # 결측치 확인
+
+table(is.na(exam))
+
+
+
+## 5.2 이상치 (=극단치, outlier) 정제
+  #논리적인 이상치(ex. 성별에 남여가 아닌 값)
+  #극단적인 이상치(정상범위 기준에서 벗어나는 값)
+  #이상치는 결측치로 대체
+
+
+# (1) 논리적인 이상치
+
+outlier <- data.frame(gender=c(1,1,2,3,2,3),    #1은 남, 2는 여 
+                      score=c(98,65,75,87,36,676))
+
+outlier$gender <- ifelse(outlier$gender !=1 & outlier$gender!=2, NA, outlier$gender) #1
+outlier$gender <- factor(outlier$gender, levels=c(1,2), labels= c('남','여'))  #2
+
+
+outlier$score <- ifelse(outlier$score>100, NA, outlier$score)
+outlier
+
+
+# (2) 정상범위 기준으로 많이 벗어난 이상치 : 상하위 0.3% 
+  # 상하위 0.3%또는 평균 - 2.75*표준편차 ~ 평균 + 2.75*표준편차
+
+mpg <- as.data.frame(ggplot2::mpg)
+
+sort(mpg$hwy)
+lowlimit <- mean(mpg$hwy) - 2.75*sd(mpg$hwy)
+highlimit <- mean(mpg$hwy) + 2.75*sd(mpg$hwy)
+highlimit
+lowlimit
+mpg$hwy[mpg$hwy>highlimit]
+mpg$hwy[mpg$hwy<lowlimit]
+
+#
+
+boxplot(mpg$hwy)
+result
+result <- boxplot(mpg$hwy)$stats
+result[1] # 하향 극단치 경계
+result[5] #상향 극단치 경계
+
+mpg$hwy[mpg$hwy>result[5]] # 44 41
+mpg$hwy[mpg$hwy<result[1]] # 없음
+
+# 이상치를 결측치로 대체
+mpg$hwy <- ifelse(mpg$hwy>result[5] | mpg$hwy<result[1], NA, mpg$hwy)
+mpg
+mpg$hwy
+sum(is.na(mpg$hwy))
+
+rm(list=ls())
+#########################################
+#### 혼자해보기 6 #########
+###################################
+
+data(mpg, package='ggplot2')
+
+# • 혼자서 해보기6. mpg 데이터를 이용해서 분석 문제를 해결해 보세요.
+# • 우선 mpg 데이터를 불러와서 일부러 이상치를 만들겠습니다. drv(구동
+#                                         방식) 변수의 값은 4(사륜구동), f(전륜구동), r(후륜구동) 세 종류로 되어
+# 있습니다. 몇 개의 행에 존재할 수 없는 값 k를 할당하겠습니다. cty(도
+#                                          시 연비) 변수도 몇 개의 행에 극단적으로 크거나 작은 값을 할당하겠습
+# 니다.
+mpg <- as.data.frame(ggplot2::mpg) # mpg 데이터 불러오기
+mpg[c(10, 14, 58, 93), "drv"] <- "k" # drv 이상치 할당
+mpg[c(29, 43, 129, 203), "cty"] <- c(3, 4, 39, 42) # cty 이상치 할당
+
+# • 이상치가 들어있는 mpg 데이터를 활용해서 문제를 해결해보세요.
+# • 구동방식별로 도시 연비가 다른지 알아보려고 합니다. 분석을 하려면
+# 우선 두 변수에 이상치가 있는지 확인하려고 합니다.
+
+mpg
+boxplot(mpg$cty)
+
+
+# • Q1. drv에 이상치가 있는지 확인하세요. 이상치를 결측 처리한 다음
+# 이상치가 사라졌는지 확인하세요. 결측 처리 할 때는 %in% 기호를
+# 활용하세요.
+mpg$drv
+table(is.na(mpg$drv))
+
+mpg$drv <- ifelse(mpg$drv !='f' & mpg$drv !='4' & mpg$drv != 'r', NA, mpg$drv) #1
+mpg
+
+
+
+
+# • Q2. 상자 그림을 이용해서 cty에 이상치가 있는지 확인하세요. 상자
+# 그림의 통계치를 이용해 정상 범위를 벗어난 값을 결측 처리한 후 다시
+# 상자 그림을 만들어 이상치가 사라졌는지 확인하세요.
+
+
+result <- boxplot(mpg$cty)$stats
+
+mpg$cty[mpg$cty>result[5]]
+mpg$cty[mpg$cty<result[1]]
+mpg$cty <- ifelse(mpg$cty>result[5] | mpg$cty<result[1], NA, mpg$cty)
+
+boxplot(mpg$cty)
+
+
+
+# • Q3. 두 변수의 이상치를 결측처리 했으니 이제 분석할 차례입니다. 이상
+# 치를 제외한 다음 drv별로 cty 평균이 어떻게 다른지 알아보세요. 하나
+# 의 dplyr 구문으로 만들어야 합니다.
+
+
+
+mpg %>% 
+  group_by(drv) %>% 
+  summarise(mean_cty=mean(cty))
+
+
+
+
