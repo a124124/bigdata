@@ -827,9 +827,10 @@ boxplot(mpg$cty)
 # 이상치가 사라졌는지 확인하세요. 결측 처리 할 때는 %in% 기호를
 # 활용하세요.
 mpg$drv
-table(is.na(mpg$drv))
 
-mpg$drv <- ifelse(mpg$drv !='f' & mpg$drv !='4' & mpg$drv != 'r', NA, mpg$drv) #1
+mpg$drv <- ifelse(mpg$drv !='f' & mpg$drv !='4' & mpg$drv != 'r', NA, mpg$drv)
+mpg$drv <- ifelse(mpg$drv %in% c('f','4','r'), mpg$drv, NA)
+
 mpg
 
 
@@ -857,9 +858,11 @@ boxplot(mpg$cty)
 
 
 mpg %>% 
+  filter(!is.na(drv) & !is.na(cty)) %>% 
   group_by(drv) %>% 
   summarise(mean_cty=mean(cty))
 
-
+library(doBy)
+summaryBy(cty~drv, mpg[!is.na(mpg$drv),], FUN=mean, na.rm=T)
 
 

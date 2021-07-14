@@ -132,3 +132,28 @@ conn
 
 
 # SQL 전송 + 결과 받기 
+
+rs <- dbSendQuery(conn, "select * from personal")
+personal <- fetch(rs, n=-1)
+personal
+
+# SQL 전송과 결과 받기를 한번에
+
+division <- dbGetQuery(conn, "select * from division")
+division
+
+# 테이블 전체 데이터를 한번에
+
+person <- dbReadTable(conn, "personal")
+person
+
+
+# 데이터베이스 연결 해제
+
+dbDisconnect(conn)
+
+# 드라이버 언로드
+
+dbUnloadDriver(drv)
+
+detach("package:RMySQL", unload=T)

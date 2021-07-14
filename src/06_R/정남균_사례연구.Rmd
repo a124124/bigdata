@@ -1,0 +1,283 @@
+#--------------------------------#
+#### 11장. 최종예제(사례연구) ####
+#--------------------------------#
+
+#### 0 패키지 설치 및 로드하기 ####
+
+install.packages('foreign')
+library(foreign) # SPSS 파일 불러오기
+library(dplyr) # 전처리
+library(doBy) # 전처리
+library(ggplot2) # 시각화
+library(readxl) # 엑셀파일 불러오기(code_job의 데이터)
+rm(list=ls(all.names=T))
+
+
+
+#### 1. 데이터를 불러와 원하는 필드만 추출 ####
+
+# (1) SPSS 파일을 데이터 프레임으로
+
+```{r}
+raw_Welfare <- read.spss(file='D:/jk/bigdata/download/sharedBigdata/Koweps/Koweps_hpc10_2015_beta1.sav', to.data.frame = T)
+
+dim(raw_Welfare)
+View(raw_Welfare)
+
+
+
+raw_welfare <- read.spss(file='D:/jk/bigdata/download/sharedBigdata/Koweps/Koweps_hpc10_2015_beta6.sav', to.data.frame = T,
+                         reencode = 'utf-8')
+dim(raw_welfare)
+View(raw_welfare)
+head(raw_welfare,1)
+```
+
+# (2) 필요한 필드만 select
+```{r}
+welfare <- raw_welfare[,c('h10_g3','h10_g4','h10_g10','h10_g11',
+                      'h10_eco9','p1002_8aq1','h10_reg7')]
+
+dim(welfare)
+head(welfare)
+```
+# (3) 변수명 변경
+```{r}
+welfare <- rename(welfare, gender= h10_g3, #성별
+                  birth = h10_g4, #연도
+                  marriage = h10_g10, # 혼인
+                  religion = h10_g11, # 종교
+                  code_job = h10_eco9, # 직업코드
+                  income = p1002_8aq1, # 월급
+                  code_region = h10_reg7) # 지역코드
+welfare
+
+head(welfare)
+
+table(is.na(welfare))
+
+colSums(is.na(welfare))
+
+```
+# 2. 1번 문제의 결과인 data.frame변수를 이용하여 성별에 따른 월급 차이가 있는지를 분석하시오. 채점기준 ① gender 필드 변수의 이상치가 있는지 확인하고 이상치 값 처리를 한다(1점).
+```{r}
+table(welfare$gender, useNA='ifany') # 이상치 없음
+# 채점기준 ② gender 필드 변수의 결측치를 확인한다(1점).
+table(is.na(welfare$gender)) # 결측치 없음
+
+# 채점기준 ③ gender의 값이 1은 male로 2는 female로 변경하고 gender의 타입을 factor로 변경한다(1점).
+welfare$gender <- ifelse(welfare$gender==1, 'male','female')
+
+table(welfare$gender)
+welfare$gender <- factor(welfare$gender, levels=c('male','female'))
+
+```
+# 채점기준 ④ 성별 비율을 도표로 나타내고 그래프로 시각화한다(2점).
+```{r}
+gender.ratio <- welfare %>% 
+  group_by(gender) %>% 
+  summarise(ratio = n()/nrow(welfare)*100)
+
+pie(gender.ratio$ratio, 
+    labels=paste(gender.ratio$gender, round(gender.ratio$ratio, 2),'%'),
+    clockwise = T,
+    col=c('skyblue','pink'))
+
+ggplot(gender.ratio, aes(x=gender,y=ratio, fill=gender)) +
+  #geom_col()
+  geom_bar(stat='identity') +
+  scale_x_discrete(limits=c('female','male')) + #축 순서
+  scale_fill_discrete(limits=c('female','male')) + # 범례 순서 
+  theme(legend.position = c(.3,.8),
+        legend.title = element_text(face=3, color='red'))
+
+
+ggplot(gender.ratio, aes(x='',y=ratio,fill=gender)) +
+  geom_col() +
+  coord_polar('y')
+# 채점기준 ⑤ income의 최소값, 1분위수, 중위수, 3분위수, 최대값, 결측치 등을 탐색하고, boxplot과 월급의 빈도그래프를 시각화한다(2점).
+summary(welfare$income)
+boxplot(welfare$income)
+ggplot(welfare, aes(y=income)) +
+  geom_boxplot()
+ggplot(welfare, aes(income)) +
+  geom_histogram() + # 연속적인 자료 income을 계급으로 나누어 계급별 빈도그래프
+  coord_cartesian(xlim=c(0,1200))
+```
+
+# 채점기준 ⑥ income이 0인 데이터는 이상치로 정하고, 이상치를 결측 처리한다(1점).
+```{r}
+b <- boxplot(welfare$income)$stat
+
+table(welfare$income <= b[1])
+
+welfare$income <- ifelse(welfare$income <= b[1],NA, welfare$income)
+
+table(welfare$income <=b[1], useNA='ifany')
+table(welfare$income >b[5], exclude = NULL) # 상위 이상치보다 큰 값이 5% 가량 되어 상위 이상치는 처리하지 않는다.
+```
+
+# 결측치 처리
+```{r}
+temp <- welfare[,c('gender','income')]
+m <- tapply(temp$income, temp$gender, median, na.rm=T)
+m
+head(temp)
+temp$income <- ifelse(is.na(temp$income), m[temp$gender], temp$income)
+head(temp)
+```
+# 채점기준 ⑦ 결측치를 제외한 데이터를 이용하여 성별에 따른 월급차이가 있는지를 분석한다(2점).
+
+```{r}
+temp <- na.omit(welfare[,c('gender','income')])
+summaryBy(income~gender, data=temp, FUN=c(mean,sd))
+
+
+welfare %>% 
+  group_by(gender) %>% 
+  summarise(income.mean = mean(income, na.rm=T)) %>%
+  ggplot(aes(x=gender,y=income.mean)) +
+  geom_bar(stat='identity')
+
+ggplot(welfare, aes(x=gender, y=income)) +
+  geom_point(position = 'jitter', col='blue', alpha=3)+
+  geom_violin() +
+  geom_boxplot(aes(col=gender),
+               fill='lightblue', width=.3, notch = T) +
+  coord_cartesian(ylim=c(0,1000))
+
+
+t.test(income~gender, data=welfare)
+
+```
+  # p-value 가 0.05 미만으로 성별에 따른 월급차이가 없다는 귀무가설을 기각한다.
+
+# 1번 문제의 결과인 data.frame변수를 이용하여 나이와 월급의 관계를 분석하여 몇 살 때 월급을 가장 많이 받
+# 는지 시각화하시오. 채점기준 ① birth, income 필드 변수의 이상치와 결측치를 확인한다(2점).
+```{r}
+class(welfare$birth)
+table(is.na(welfare$birth))
+
+
+# 채점기준 ② birth변수를 이용하여 나이를 계산하고 이 값을 age 필드로 추가한다(2점).
+
+welfare$age <- 2015 - welfare$birth + 1
+
+boxplot(welfare$age)$stat
+
+
+```
+# 채점기준 ③ x축을 나이, y축을 월급으로 지정하고 나이에 따른 월급의 변화가 표현되도록 막대그래프나 선 그
+# 래프로 시각화한다(3점).
+```{r}
+ggplot(welfare, aes(x=age, y=income, fill=age)) +
+  geom_col()
+
+
+
+fit <- lm(income~age, data=welfare)
+
+# 채점기준 ④ 나이에 따른 월급의 차이가 있는지 관계를 분석한다(3점).
+anova(fit)
+
+```
+# (5) 몇살때 월급을 많이 받는지
+```{r}
+ggplot(data=welfare, aes(age))+ geom_bar()
+
+age_income <- welfare %>% 
+  filter(!is.na(welfare$income)) %>% 
+  group_by(age) %>% 
+  summarise(income.mean = mean(income),
+            income.sd   = sd(income))
+ggplot(age_income, aes(x=age, y=income.mean)) +
+  geom_line() 
+
+
+View(age_income)
+```
+#  1번 문제의 결과인 data.frame변수를 이용하여 나이에 따른 월급 변화를 성별을 분리하여 시각화 하시오. 채점기준 ① 나이와 성별로 group_by하여 월급평균, 월급표준편차, 월급중앙값, 최소값과 최대값, 빈도을 산출 한다(5점).
+```{r}
+welfare %>% 
+  group_by(age,gender) %>% 
+  summarise(mean_income=mean(income,na),
+            median_income=median(income),
+            max_income=max(income),
+            min_income=min(income))
+
+
+
+```
+# 채점기준 ② 나이에 따른 월급평균의 추이를 아래와 같은 그래프를 시각화하고, 아래의 그래프를 파일로도 출력한다(5점).
+```{r}
+income.mean <- mean(welfare$income)
+
+ggplot(data=welfare, aes(x=age,y=income.mean, fill=gender)) +
+  geom_line()
+
+
+head(age_income[order(-age_income$income.mean),],5)
+```
+# 1번 문제의 결과인 data.frame변수를 이용하여 직업별 월급의 차이가 나는지 분석하고, 만약 월급의 차이가 
+# 나면 어떤 직업이 월급이 가장 많은지 상위 10개 직업군만 시각화하시오. 채점기준 ① 직업별 월급 평균, 표준편차, 빈도를 평균월급 순으로 정렬하여  
+# 출력하여 직업별 월급의 추이를 분석한다(3점).
+```{r}
+welfare %>% 
+  group_by(code_job,income) %>% 
+  summarise() %>% 
+  ggplot(aes(y=code_job,x=income))
+
+```
+
+# 채점기준 ② 직업별 월급의 차이를 분석한 후, 상위 소득 10개 직업군을 도표로 출력하고, 아래와 같은 그래
+# 프로 시각화한다. 시각화한 그래프는 ggsave함수를 이용하여 top10.png라는 그림파일로 저장한다
+# (4점)
+
+
+
+
+  
+  # 8. 1번 문제의 결과인 data.frame변수를 이용하여 성별로 어떤 직업이 가장 많을지 분석하시오. 채점기준 ① 여성 최빈 직업 상위 10를 추출한다(5점).
+  # 채점기준 ② 남성 최빈 직업 상위 10을 추출한다(5점).
+```{r}
+head(welfare) %>% 
+  group_by(gender) %>% 
+  summarise(code_job)
+  
+
+```
+  
+    # 9. 1번 문제의 결과인 data.frame변수를 이용하여 종교 유무에 따른 이혼률을 분석하시오. 채점기준 ① 종교 데이터인 religion 필드의 이상치 및 결측치를 확인한다(1점).
+```{r}
+table(is.na(welfare$religion))
+  # 채점기준 ② religion 필드가 1이면 “종교-유”, 2이면 “종교-무”로 데이터를 변경한다(2점).
+welfare$religion <- ifelse(welfare$religion == 1, '종교-유','종교-무')
+welfare$religion
+
+
+
+  # 채점기준 ③ 종교 유무의 빈도를 시각화한다(1점).
+ggplot(data=welfare, aes(religion, fill=religion)) +
+  geom_bar()
+
+
+# 채점기준 ④ 혼인 상태 데이터인 marriage 필드가 1이면 “기혼”, 3이면 “이혼”으로, 그 외는 NA로 값을 같은 
+  # marriage_group 파생변수를 추가한다(2점).
+
+welfare$marriage_group <- ifelse(welfare$marriage == 1, '기혼',NA)
+welfare$marriage_group
+```
+
+  # 채점기준 ⑤ 종교 유무에 따른 이혼률을 분석한다(2점).
+
+
+  # 채점기준 ⑥ 분석한 결과를 도표와 그래프로 시각화한다(2점).
+
+
+  # 10. 1번 문제의 결과인 data.frame변수를 이용하여 지역별 연령대 비율을 분석하시오. 노년층이 많은 지역은 어
+  # 디인지 출력하시오. 채점기준 ① 결측치를 확인한다(2점).
+
+  # 채점기준 ② region 파생변수를 지역명으로 추가한다(2점). 1:서울 2:수도권(인천/경기) 3:부산/경남/울산 4:대구/경북 5:대전/충남 6:강원/충북 7:광주/전남/전북
+  # /제주도
+  # 채점기준 ③ 지역별 연령대 비율을 분석한 도표 및 그래프를 시각화한다(3점).
+  # 채점기준 ④ 노년층이 많은 지역이 어디인지 시각화한다(3점)
