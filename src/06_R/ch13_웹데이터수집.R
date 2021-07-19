@@ -148,4 +148,38 @@ nrow(movie1)
 useNIADic()
 
 # 특수문자 없애기
-movie1$review <- gsub('\\W',)
+movie1$review <- gsub('\\W',' ',movie1$review)
+movie1$review <- gsub('[ㄱ-ㅎㅏ-ㅣ]',' ',movie1$review)
+View(movie1)
+
+# 명사 추출
+
+nouns <- extractNoun(movie1$review)
+
+# 워드 카운트 
+wordcount <- table(unlist(nouns))
+head(wordcount)
+View(wordcount)
+df_word <- as.data.frame(wordcount, stringsAsFactors = F)
+
+df_word <- rename(df_word, word=Var1, freq=Freq)
+
+df_word <- filter(df_word, nchar(word)>1& word!='영화')
+head(df_word)
+
+# 최빈 단어 10개 뽑기
+top10 <- df_word[order(df_word$freq, decreasing = T),][1:10,]
+top10
+
+pal <- brewer.pal(8, 'Dark2')
+
+# 워드 클라우드
+
+wordcloud(words = df_word$word,
+          freq = df_word$freq,
+          min.freq = 5,
+          max.words = 150,
+          random.order = F,
+          rot.per = 0.1,
+          scale = c(5,0.5),
+          colors = pal)

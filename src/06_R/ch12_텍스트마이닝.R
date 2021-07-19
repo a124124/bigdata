@@ -237,7 +237,32 @@ head(idCount)
 # left join 사용
 
 twitter <- left_join(twitter, idCount)
-View(tw1)
+View(twitter)
 # 150회이상 트윗한 계정의 정보만 추출
 tw1 <- subset(twitter, count>150)
 View(tw1)
+
+# 필요없는 문자 삭제 - 완료
+# 명사 추출
+
+nouns <- extractNoun(tw1$tw)
+
+# 워드 카운트
+
+wordcount <- table(unlist(nouns))
+df_word <- as.data.frame(wordcount, stringsAsFactors = F)
+df_word <- rename(df_word, word=Var1, freq=Freq)
+head(df_word)
+
+df_word <- filter(df_word, nchar(word)>1)
+
+
+wordcloud(words=df_word$word,
+          freq=df_word$freq,
+          min.freq = 5,
+          max.words = 200,
+          random.order = F, 
+          rot.per= 0.1,
+          scale=c(5,0.7),
+          colors=pal)
+
